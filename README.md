@@ -2,6 +2,39 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## User Story
+User Story
+As a user I want to sign up and get sorted into one of the 4 Hogwarts house
+As a user after I’m sorted I want to “explore” Hogwarts favorite teachers and take quizzes based on the teacher’s subject
+
+
+
+Notes: 
+
+DB
+Users 
+Questions 
+
+Future Dev 
+Time limit or quiz limit
+Level after you get a certain amount of level correct 
+You can take your owls…
+
+
+
+
+Overview 
+Sign in 
+Sign out 
+Great hall page 
+Classroom pages 
+Each page take  
+
+Build Notes from colin 
+First quiz - stage one 
+Create database connections that are randomized and org. By that stage 
+Build quiz as separate component with separate data 
+
 ## Available Scripts
 
 In the project directory, you can run:
