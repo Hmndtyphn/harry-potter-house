@@ -4,7 +4,6 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/pottersmarauder
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
-
 });
 
 module.exports = mongoose.connection;

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-
+const Sorting = require('./Sorting')
 const userSchema = new Schema (
     {
         username: {
@@ -20,6 +20,14 @@ const userSchema = new Schema (
             required: true,
             minlength: 6
         },
+        
+        // look into pulling from sorting house column
+        house: {
+          type: Schema.Types.ObjectId,
+          ref: 'Sorting',
+          required: true
+        },
+
         wand: [Wand.schema],
         year: { type: Number, default: 1},
     }
