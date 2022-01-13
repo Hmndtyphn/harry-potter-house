@@ -1,8 +1,20 @@
-const mongoose = require('mongoose');
+const { Schema, model, Types } = require('mongoose');
 const bcrypt = require('bcrypt');
-const Sorting = require('./Sorting')
-const userSchema = new Schema (
-    {
+// const Sorting = require('./Sorting');
+
+const WandSchema = new Schema({
+        wood: {
+            type: String
+        },
+        core: {
+            type: String,
+        },
+        length: {
+            type: Number
+        },
+    });
+
+const UserSchema = new Schema({
         username: {
             type: String, 
             required: true,
@@ -23,15 +35,19 @@ const userSchema = new Schema (
         
         // look into pulling from sorting house column
         house: {
-          type: Schema.Types.ObjectId,
-          ref: 'Sorting',
-          required: true
+          type: String,
+
         },
 
-        wand: [Wand.schema],
+        wand: WandSchema,
         year: { type: Number, default: 1},
-    }
-);
+    },
+    {
+      toJSON: {
+        virtuals: true,
+        getters: true
+      }
+    });
 
 userSchema.pre('save', async function(next) {
   if (this.isNew || this.isModified('password')) {
@@ -45,6 +61,6 @@ userSchema.methods.isCorrectPassword = async function(password) {
   return await bcrypt.compare(password, this.password);
 };
 
-const User = mongoose.model('User', userSchema);
+const User = model('User', UserSchema);
 
 module.exports = User;

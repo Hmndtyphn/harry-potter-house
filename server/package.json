@@ -1,6 +1,20 @@
 {
+  "name": "server",
+  "version": "1.0.0",
+  "main": "server.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
   "dependencies": {
     "apollo-server-express": "^3.6.1",
+    "bcrypt": "^5.0.1",
     "express": "^4.17.2",
     "graphql": "^16.2.0",
     "jsonwebtoken": "^8.5.1",
