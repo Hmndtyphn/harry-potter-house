@@ -1,4 +1,3 @@
-const mongoose = require('mongoose');
 const { Schema, model, Types } = require('mongoose');
 const bcrypt = require('bcrypt');
 // const Sorting = require('./Sorting');
