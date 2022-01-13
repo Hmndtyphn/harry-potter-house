@@ -1,6 +1,20 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const Sorting = require('./Sorting')
+
+const wandSchema = new Schema (
+    {
+        wood: {
+            type: String
+        },
+        core: {
+            type: String,
+        },
+        length: {
+            type: Number
+        },
+    }
+)
 const userSchema = new Schema (
     {
         username: {
@@ -28,7 +42,7 @@ const userSchema = new Schema (
           required: true
         },
 
-        wand: [Wand.schema],
+        wand: wandSchema,
         year: { type: Number, default: 1},
     }
 );
