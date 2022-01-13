@@ -1,7 +1,4 @@
 {
-  "dependencies": {
-    "concurrently": "^7.0.0"
-  },
   "name": "harry-potter-house",
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "version": "1.0.0",
@@ -18,6 +15,9 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Hmndtyphn/harry-potter-house/issues"
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0"
   },
   "homepage": "https://github.com/Hmndtyphn/harry-potter-house#readme"
 }
