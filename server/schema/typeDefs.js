@@ -19,7 +19,7 @@ const typeDefs = gql`
         slytherin: String
 
     }
-    {
+    type Trivia {
         _id: ID
         question: String
         answer: String
@@ -28,6 +28,10 @@ const typeDefs = gql`
         points: Number
     }
 
-`
+    type Query {
+
+    }
+
+`;
 
 module.exports = typeDefs;
