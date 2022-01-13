@@ -7,7 +7,9 @@
   "license": "ISC",
   "description": "",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "watch": "nodemon",
+    "seed": "node config/seeds.js"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
