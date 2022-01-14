@@ -21,7 +21,7 @@ const ClassSchema = new Schema(
         quizzes: [
             {
                 type: Schema.Types.ObjectId,
-                ref: 'Quiz'
+                ref: 'Trivia'
             }
         ],
         year: [Number]
