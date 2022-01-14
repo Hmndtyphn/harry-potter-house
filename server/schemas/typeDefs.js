@@ -7,7 +7,24 @@ const typeDefs = gql`
         email: String
         password: String
         house: String
-        wand: Wand
+    }
+
+    type Quiz {
+        _id: ID
+        question: String
+        answerOptions: [String]
+        subject: Class
+        year: Int
+    }
+
+    type Class {
+        _id: ID
+        name: String
+        description: String
+        professor: String
+        image: String
+        quizzes: [Quiz]
+        year: [Int]
     }
 
     type Sorting {
@@ -25,13 +42,17 @@ const typeDefs = gql`
         answer: String
         subject: String 
         professor: String
-        points: Number
+        points: Int
+    }
+
+    type Auth {
+        token: ID
+        user: User
     }
 
     type Query {
-
+        class: [Class]
     }
-
 `;
 
 module.exports = typeDefs;
