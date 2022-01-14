@@ -7,6 +7,14 @@ const typeDefs = gql`
         email: String
         password: String
         house: String
+        wand: WandSchema
+    }
+
+    type WandSchema {
+        _id: ID
+        wood: String
+        core: String
+        length: String
     }
 
     type Quiz {
@@ -51,7 +59,7 @@ const typeDefs = gql`
     }
 
     type Query {
-        class: [Class]
+        
     }
 `;
 
