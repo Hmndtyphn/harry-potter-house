@@ -15,10 +15,10 @@ const resolvers = {
       throw new AuthenticationError("Stop! You need to Login to be a wizard!");
     },
     user: async (parent, { username }) => {
-      User.findOne({ username }).select("-__v -password").populate("wand");
+      return User.findOne({ username }).select("-__v -password").populate("wand");
     },
     users: async () => {
-      return User.findAll().select("-__v -password").populate("wand");
+      return User.find().select("-__v -password").populate("wand");
     },
     classes: async () => {
       return Class.findAll();
@@ -33,7 +33,7 @@ const resolvers = {
     },
 
     login: async (parent, { email, password }) => {
-      const user = await use.findOne({ email });
+      const user = await User.findOne({ email });
 
       if (!user) {
         throw new AuthenticationError("Incorrect credentials");
