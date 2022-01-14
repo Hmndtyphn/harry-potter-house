@@ -17,7 +17,7 @@ const typeDefs = gql`
         length: String
     }
 
-    type Quiz {
+    type Trivia {
         _id: ID
         question: String
         answerOptions: [String]
@@ -35,24 +35,6 @@ const typeDefs = gql`
         year: [Int]
     }
 
-    type Sorting {
-        _id: ID
-        question: String
-        gryffindor: String
-        ravenclaw: String
-        hufflepuff: String 
-        slytherin: String
-
-    }
-    type Trivia {
-        _id: ID
-        question: String
-        answer: String
-        subject: String 
-        professor: String
-        points: Int
-    }
-
     type Auth {
         token: ID
         user: User
@@ -62,6 +44,7 @@ const typeDefs = gql`
         me: User
         users: [User]
         user: (username:String!): User
+        trivia: [Trivia]
     }
 `;
 

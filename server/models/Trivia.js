@@ -1,28 +1,30 @@
-const { Schema, model } = require("mongoose");
+const { Schema, model, Types } = require('mongoose');
 
 const TriviaSchema = new Schema(
-  {
-    question: {
-      type: String,
-      required: true,
+    {
+        question: {
+            type: String,
+            required: true
+        },
+        answerOptions: [String],
+        isCorrect: {
+            type: String
+        },
+        subject: {
+            type: Schema.Types.ObjectId,
+            ref: 'Class'
+        },
+        year: {
+            type: Number,
+            required: true
+        }
     },
-    answer: {
-      type: String,
-      required: true,
-    },
-    subject: {
-      type: String,
-      required: true,
-    },
-    professor: {
-      type: String,
-      required: true,
-    },
-    points: {
-      type: Number,
-      required: true,
-    },
-  },
+    {
+        toJSON: {
+            virtuals: true,
+            getters: true
+        }
+    }
 );
 
 const Trivia = model('Trivia', TriviaSchema);
