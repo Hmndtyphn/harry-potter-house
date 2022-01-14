@@ -3,8 +3,7 @@ const { Schema, model, Types } = require('mongoose');
 const TriviaSchema = new Schema(
     {
         question: {
-            type: String,
-            required: true
+            type: String
         },
         answerOptions: [String],
         isCorrect: {
@@ -15,8 +14,7 @@ const TriviaSchema = new Schema(
             ref: 'Class'
         },
         year: {
-            type: Number,
-            required: true
+            type: [Number]
         }
     },
     {

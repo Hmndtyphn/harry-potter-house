@@ -1,7 +1,6 @@
-const { AuthenticationError } = require('apollo-server-express');
-const { User, Class, Trivia } = require('../models');
-const { signToken } = require('../utils/auth');
-
+const { AuthenticationError } = require("apollo-server-express");
+const { User, Class, Trivia } = require("../models");
+const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
@@ -9,27 +8,21 @@ const resolvers = {
       if (context.user) {
         const userData = await User.findOne({ _id: context.user._id })
           .select("-__v -password")
-          .populate("wand")
+          .populate("wand");
 
         return userData;
       }
-      throw new AuthenticationError('Stop! You need to Login to be a wizard!')
+      throw new AuthenticationError("Stop! You need to Login to be a wizard!");
     },
     user: async (parent, { username }) => {
-      User.findOne({ username })
-        .select("-__v -password")
-        .populate("wand")
-
+      User.findOne({ username }).select("-__v -password").populate("wand");
     },
     users: async () => {
-      return User.findAll()
-        .select("-__v -password")
-        .populate("wand")
+      return User.findAll().select("-__v -password").populate("wand");
     },
-    classes: async() => {
-      return Class.findAll()
-
-    }
+    classes: async () => {
+      return Class.findAll();
+    },
   },
   Mutation: {
     addUser: async (parent, args) => {
@@ -38,35 +31,33 @@ const resolvers = {
 
       return { token, user };
     },
-    
-  login: async (parent, { email, password }) => {
-    const user = await use.findOne({ email });
 
-  if (!user) {
-    throw new AuthenticationError('Incorrect credentials');
-  }
+    login: async (parent, { email, password }) => {
+      const user = await use.findOne({ email });
 
-  const correctPw = await user.isCorrectPassword(password);
+      if (!user) {
+        throw new AuthenticationError("Incorrect credentials");
+      }
 
-  if (!correctPw) {
-    throw new AuthenticationError('Incorrect credentials');
-  }
+      const correctPw = await user.isCorrectPassword(password);
 
-  const token = signToken(user);
-  return { token, user };
+      if (!correctPw) {
+        throw new AuthenticationError("Incorrect credentials");
+      }
 
+      const token = signToken(user);
+      return { token, user };
+    },
+
+    updateUser: async (parent, args, context) => {
+      if (context.user) {
+        return await User.findByIdAndUpdate(context.user._id, args, {
+          new: true,
+        });
+      }
+      throw new AuthenticationError("Not logged in");
+    },
   },
-
-  updateUser: async (parent, args, context) => {
-    if (context.user) {
-      return await
-      User.findByIdAndUpdate(context.user._id, args, { new: true});
-    }
-    throw new AuthenticationError('Not logged in');
-    }
-
-  }
-
-}
+};
 
 module.exports = resolvers;

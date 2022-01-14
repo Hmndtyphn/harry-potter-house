@@ -21,8 +21,9 @@ const typeDefs = gql`
         _id: ID
         question: String
         answerOptions: [String]
+        isCorrect: String
         subject: Class
-        year: Int
+        year: [Int]
     }
 
     type Class {

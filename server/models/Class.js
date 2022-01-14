@@ -24,7 +24,7 @@ const ClassSchema = new Schema(
                 ref: 'Trivia'
             }
         ],
-        year: [Number]
+        year:[Number]
     },
     {
         toJSON: {
