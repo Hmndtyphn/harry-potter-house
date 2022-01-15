@@ -1,6 +1,5 @@
-const { Schema, model, Types, SchemaTypes } = require("mongoose");
+const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
-// const Sorting = require('./Sorting');
 
 const WandSchema = new Schema(
   {

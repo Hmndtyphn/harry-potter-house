@@ -6,10 +6,16 @@ db.once('open', async () => {
     const classes = await Class.insertMany([
         {
             name: 'transfiguration',
-            decription: 'ipsum lorem',
+            description: 'ipsum lorem',
             professor: 'Minerva McGonagall',
-            quizzes: [],
             image: 'professor_mcgonagall',
+            year: [1, 2, 3]
+        },
+        {
+            name: 'potions',
+            description: 'ipsim lorem',
+            professor: 'Severus Snape',
+            image: 'professor_snape',
             year: [1, 2, 3]
         }
     ])
