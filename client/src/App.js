@@ -21,7 +21,6 @@ import Charms from '../src/components/Charms/Charms';
 import DefDarkArts from '../src/components/DefDarkArts/DefDarkArts';
 import HistoryMagic from '../src/components/HistoryMagic/HistoryMagic';
 import Potions from '../src/components/Potions/Potions';
-import CommonRoom from './pages/CommonRoom';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -86,7 +85,7 @@ function App() {
           <Route exact path="/login" component={Login} />
           <Route exact path="/commonroom" component={CommonRoom} />
           <Route exact path="/classroom/:name" component={Classroom} />
-          <Route exact path="greathall" component={GreatHall} />
+          <Route exact path="/greathall" component={GreatHall} />
         </Switch>
         </div>
         </StoreProvider>
