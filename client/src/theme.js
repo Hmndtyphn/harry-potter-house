@@ -7,26 +7,9 @@ const theme = createTheme({
     // font sizing 
     typography: {
         
-        h1: {
+        h1,h2,h3,h4,h5,h6: {
             fontFamily: "Sans Serif",
         },
-
-        h2: {
-            fontFamily: "Sans Serif",
-        },
-
-        h3: {
-            fontFamily: "Sans Serif",
-        },
-
-        h4: {
-            fontFamily: "Sans Serif",
-        },
-
-        h6: {
-            fontFamily: "Sans Serif"
-        },
-        
     }
 })
 

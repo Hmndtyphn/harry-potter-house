@@ -14,7 +14,7 @@ function App() {
   const [sections] = useState([
     // nav bar sections for page scroll
     {
-      name: 'GreatHall',
+      name: 'The Great Hall',
       component: <GreatHall />
     },
 
@@ -24,12 +24,12 @@ function App() {
     },
 
     {
-      name: 'DefDarkArts',
+      name: 'Defense Against the Dark Arts',
       component: <DefDarkArts />
     },
 
     {
-      name: 'HistoryMagic',
+      name: 'History of Magic',
       component: <HistoryMagic />
     },
 
