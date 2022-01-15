@@ -23,6 +23,9 @@ const resolvers = {
     classes: async () => {
       return Class.find().populate('quizzes')
     },
+    trivia: async () => {
+        return Trivia.find().populate('subject')
+    }
   },
   Mutation: {
     addUser: async (parent, args) => {
