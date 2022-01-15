@@ -73,9 +73,6 @@ function App() {
 
   ])
 
-  // uses current state of sections
-  const [currentSection, setCurrentSection] = useState(sections[0])
-
   // Add routes instead here (look at app.js in shop shop)
   return (
     <ApolloProvider client={client}>
