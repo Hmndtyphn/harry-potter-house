@@ -326,7 +326,119 @@ db.once('open', async () => {
             answerOptions: ['Delumos', 'Tenebrae', 'Knox', 'Noir'],
             isCorrect: 'Knox',
             // subject: classes[1]._id,
-        }
+        },
+        {
+            question: "What spell is used to open locked doors",
+            answerOptions: ['Incendio', 'Reparo', 'Revelio', 'Alohomora'],
+            isCorrect: 'Alohomora',
+            // subject: classes[2]._id,
+            year: [1]
+        },
+        {
+            question: "What is the counter charm to Engorgio?",
+            answerOptions: ['Imperio', 'Reducto', 'Reducio', 'Obliviate'],
+            isCorrect: 'Reducio',
+            // subject: classes[2]._id,
+            year: [1]
+        },
+        {
+            question: "What does the spell Petrificus Totalus do?",
+            answerOptions: ['Prevent receiver from speaking', 'Temporarily paralyze receiver', 'Hang upside down in the air', 'Sets receiver on fire'],
+            isCorrect: 'Temporarily paralyze receiver',
+            // subject: classes[2]._id,
+            year: [1]
+        },
+        {
+            question: "What charm is used to bring the statues that protect Hogwarts to life?",
+            answerOptions: ['Petrificus Totalus', 'Homenum Revelio', 'Priori Incanto', 'Piertotum Locomotor'],
+            isCorrect: 'Piertotum Locomotor',
+            // subject: classes[2]._id,
+            year: [1]
+        },
+        {
+            question: "What charm is used to bring the statues that protect Hogwarts to life?",
+            answerOptions: ['Petrificus Totalus', 'Homenum Revelio', 'Priori Incanto', 'Piertotum Locomotor'],
+            isCorrect: 'Piertotum Locomotor',
+            // subject: classes[2]._id,
+            year: [1]
+        },
+        {
+            question: "What spell is used to conjure the Dark Mark?",
+            answerOptions: ['Imperio', 'Impedimenta', 'Sectumsempra', 'Morsmordre'],
+            isCorrect: 'Morsmordre',
+            // subject: classes[2]._id,
+            year: [1]
+        },
+        {
+            question: "What type of spell is Expecto Patronum?",
+            answerOptions: ['Hex', 'Curse', 'Charm', 'Jinx'],
+            isCorrect: 'Charm',
+            // subject: classes[2]._id,
+            year: [1]
+        },
+        {
+            question: "What type of spell is Expecto Patronum?",
+            answerOptions: ['Hex', 'Curse', 'Charm', 'Jinx'],
+            isCorrect: 'Charm',
+            // subject: classes[2]._id,
+            year: [1]
+        },
+        {
+            question: "What is the counter-jinx for Levicorpus?",
+            answerOptions: ['Liberacorpus', 'Viberacorpus', 'Rennervate', 'Legilimens'],
+            isCorrect: 'Liberacorpus',
+            // subject: classes[2]._id,
+            year: [1]
+        },
+        {
+            question: "What does the spell Serpensortia do?",
+            answerOptions: ['Cuts the target', 'Paralyzes the target', 'Emits a great light', 'Conjures a snake from the end of the wand'],
+            isCorrect: 'Conjures a snake from the end of the wand',
+            // subject: classes[2]._id,
+            year: [1]
+        },
+        {
+            question: "What is the spell Anapneo used for?",
+            answerOptions: ['Clearing someones airways if choking', 'Make invisible ink disappear', 'Protection against hexes'],
+            isCorrect: 'Clearing someones airways if choking',
+            // subject: classes[2]._id,
+            year: [1]
+        },
+        {
+            question: "Who created the spell Sectum Sempra",
+            answerOptions: ['Gilderoy Lockhart', 'Albus Dumbledore', 'Severus Snape', 'Remus Lupin'],
+            isCorrect: 'Severus Snape',
+            // subject: classes[2]._id,
+            year: [1]
+        },
+        {
+            question: "What charm is used to make objects levitate?",
+            answerOptions: ['Levicorpus', 'Morbiliarbus', 'Locomotor', 'Wingardium Leviosa'],
+            isCorrect: 'Wingardium Leviosa',
+            // subject: classes[2]._id,
+            year: [1]
+        },
+        {
+            question: "What spell can be used to turn stairs into a slide?",
+            answerOptions: ['Fidelius', 'Oppugno', 'Waddiwasi', 'Glisseo'],
+            isCorrect: 'Glisseo',
+            // subject: classes[2]._id,
+            year: [1]
+        },
+        {
+            question: "What does Densaugeo do?",
+            answerOptions: ['Causes victims front teeth to grow', 'Causes victim to grow pig tail', 'Causes victim to vomit slugs', 'Causes victims skin to break out in boils'],
+            isCorrect: 'Causes victims front teeth to grow',
+            // subject: classes[2]._id,
+            year: [1]
+        },
+        {
+            question: "What spell stuns your opponent?",
+            answerOptions: ['Imperium', 'Stupefy', 'Silencio', 'Reducto'],
+            isCorrect: 'Stupefy',
+            // subject: classes[2]._id,
+            year: [1]
+        },
     ])
     console.log('Questions seeded')
 
@@ -398,7 +510,7 @@ db.once('open', async () => {
             password: "123456"
         }, 
         {
-            username: "colon_King",
+            username: "colon_hunter",
             email: "kingcolon@gmail.com",
             password: "123456"
         }, 
