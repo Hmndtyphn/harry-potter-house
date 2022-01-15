@@ -10,12 +10,18 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import { StoreProvider } from './utils/GlobalState';
 
+import Login from '../src/pages/Login';
+import Signup from '../src/pages/Signup';
+import Classroom from '../src/pages/Classroom'
 import GreatHall from '../src/components/GreatHall/GreatHall';
+import CommonRoom from './pages/CommonRoom';
+
 import Nav from '../src/components/Nav/Nav';
 import Charms from '../src/components/Charms/Charms';
 import DefDarkArts from '../src/components/DefDarkArts/DefDarkArts';
 import HistoryMagic from '../src/components/HistoryMagic/HistoryMagic';
 import Potions from '../src/components/Potions/Potions';
+import CommonRoom from './pages/CommonRoom';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -73,17 +79,22 @@ function App() {
   // Add routes instead here (look at app.js in shop shop)
   return (
     <ApolloProvider client={client}>
+      <Router>
       <div>
         <StoreProvider>
-        <Nav
-          sections={sections}
-          currentSection={currentSection}
-          setCurrentSection={setCurrentSection} />
-        <main>
-          {currentSection.component}
-        </main>
+        <div>
+        <Nav />
+        <Switch>
+          <Route exact path="/" component={Signup} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/commonroom" component={CommonRoom} />
+          <Route exact path="/classroom/:name" component={Classroom} />
+          <Route exact path="greathall" component={GreatHall} />
+        </Switch>
+        </div>
         </StoreProvider>
       </div>
+      </Router>
     </ApolloProvider>
   );
 }
