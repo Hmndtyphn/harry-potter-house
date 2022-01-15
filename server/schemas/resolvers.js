@@ -21,11 +21,7 @@ const resolvers = {
       return User.find().select("-__v -password").populate("wand");
     },
     classes: async () => {
-<<<<<<< HEAD
-      return Class.find();
-=======
       return Class.find().populate('quizzes')
->>>>>>> cbef620525b1b7f84f5233c2b5d8b6a2527f7c72
     },
     trivia: async () => {
         return Trivia.find().populate('subject')
