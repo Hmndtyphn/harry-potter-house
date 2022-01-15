@@ -323,9 +323,10 @@ db.once('open', async () => {
         },
         {
             question: "What is the counterspell for Lumos?",
-            answerOptions: ['Delumos', 'Tenebrae', 'Knox', 'Noir'],
-            isCorrect: 'Knox',
+            answerOptions: ['Delumos', 'Tenebrae', 'Nox', 'Noir'],
+            isCorrect: 'Nox',
             // subject: classes[1]._id,
+            year: [1]
         },
         {
             question: "What spell is used to open locked doors",
@@ -439,6 +440,177 @@ db.once('open', async () => {
             // subject: classes[2]._id,
             year: [1]
         },
+        {
+            question: "How did Hogwarts History of Magic teacher, Professor Binns die?",
+            answerOptions: ['He fell down some stairs', 'A heavy book fell on him', 'He was killed by Lord Voldemort', 'He died in his sleep'],
+            isCorrect: 'He died in his sleep',
+            // subject: classes[3]._id,
+            year: [1]
+        },
+        {
+            question: "On which floor would you find the Room of Requirement?",
+            answerOptions: ['first', 'fourth', 'sixth', 'seventh'],
+            isCorrect: 'seventh',
+            // subject: classes[3]._id,
+            year: [1]
+        },
+        {
+            question: "What fruit do you have to tickle to enter the Hogwarts kitchens?",
+            answerOptions: ['orange', 'melon', 'pear', 'strawberry'],
+            isCorrect: 'pear',
+            // subject: classes[3]._id,
+            year: [1]
+        },
+        {
+            question: "When was the Chamber of Secrets opened?",
+            answerOptions: ['1913', '1967', '1943', '1992'],
+            isCorrect: '1943',
+            // subject: classes[3]._id,
+            year: [1]
+        },
+        {
+            question: "Beedle the Bard's 'Tale of the Three Brothers' was based on the true story of which ancient wizarding family?",
+            answerOptions: ['The Gaunts', 'The Blacks', 'The Peverells', 'The Selwyns'],
+            isCorrect: 'The Peverells',
+            // subject: classes[3]._id,
+            year: [1]
+        },
+        {
+            question: "When did Albus Dumbledore defeat Gellert Grindelwald in their famous wizarding duel?",
+            answerOptions: ['1928', '1913', '1965', '1945'],
+            isCorrect: '1945',
+            // subject: classes[3]._id,
+            year: [1]
+        },
+        {
+            question: "What kind of creatures work in the Hogwarts kitchen?",
+            answerOptions: ['goblins', 'elves', 'trolls', 'centaurs'],
+            isCorrect: 'elves',
+            // subject: classes[3]._id,
+            year: [1]
+        },
+        {
+            question: "According to medieval folklore, unicorns can only be caught by...?",
+            answerOptions: ['Witches and warlocks', 'Female virgins', 'Children', 'Male virgins'],
+            isCorrect: 'Female virgins',
+            // subject: classes[3]._id,
+            year: [1]
+        },
+        {
+            question: "How many staircase would you find in Hogwarts?",
+            answerOptions: ['103', '142', '250', '310'],
+            isCorrect: '142',
+            // subject: classes[3]._id,
+            year: [1]
+        },
+        {
+            question: "If it's your first year, how would you get to school after the train?",
+            answerOptions: ['boats', 'broomstick', 'walking', 'flying car'],
+            isCorrect: 'boats',
+            // subject: classes[3]._id,
+            year: [1]
+        },
+        {
+            question: "What kind of statue leads to the stairs of the headmaster's office?",
+            answerOptions: ['snake', 'phoenix', 'eagle', 'griffon'],
+            isCorrect: 'griffon',
+            // subject: classes[3]._id,
+            year: [1]
+        },
+        {
+            question: "Behind which statue?",
+            answerOptions: ['Wilfred the Wistful', 'Gregory the Smarmy', 'Lachlan the Lanky', 'Gunhilda de Gorsemoor'],
+            isCorrect: 'Gunhilda de Gorsemoor',
+            // subject: classes[3]._id,
+            year: [1]
+        },
+        {
+            question: "Phoenix are historically associated with...?",
+            answerOptions: ['The forest', 'The desert', 'The sea', 'The sun'],
+            isCorrect: 'The sun',
+            // subject: classes[3]._id,
+            year: [1]
+        },
+        {
+            question: "The sorting hat is a staple at Hogwarts. Who did the sorting hat originally belong to?",
+            answerOptions: ['Godric Gryffindor', 'Rowena Ravenclaw', 'Salazar Slytherin', 'Helga Hufflepuff'],
+            isCorrect: 'Godric Gryffindor',
+            // subject: classes[3]._id,
+            year: [1]
+        },
+        {
+            question: "Who is the only Hogwarts professor who teaches as a ghost?",
+            answerOptions: ['Lupin', 'Quirrell', 'Flitwick', 'Binns'],
+            isCorrect: 'Binns',
+            // subject: classes[3]._id,
+            year: [1]
+        },
+        {
+            question: "You would be most hurt if a person called you...?",
+            answerOptions: ['Weak', 'Ignorant', 'Unkind', 'Boring'],
+            // subject: classes[5]._id,
+            year: [1]
+        },
+        {
+            question: "What material is at the core of your wand?",
+            answerOptions: ['Phoenix Feather', 'Dragon Heartstring', 'Unicorn Hair', 'Veela Hair'],
+            // subject: classes[5]._id,
+            year: [1]
+        },
+        {
+            question: "Which of your skills are you most proud of?",
+            answerOptions: ['Ability to make new friends', 'Ability to get what I want', 'Ability to absorb new info', 'Ability to keep secrets'],
+            // subject: classes[5]._id,
+            year: [1]
+        },
+        {
+            question: "What role are you playing in Quidditch",
+            answerOptions: ['Seeker', 'Chaser', 'Beater', 'Spectator'],
+            // subject: classes[5]._id,
+            year: [1]
+        },
+        {
+            question: "What pet do you bring to Hogwarts?",
+            answerOptions: ['Owl', 'Cat', 'Toad', 'Nothing'],
+            // subject: classes[5]._id,
+            year: [1]
+        },
+        {
+            question: "What would you see in the Mirror of Erised",
+            answerOptions: ['Myself, surrounded by riches', 'Myself, surrounded by family', 'Myself, knowledgeable above all', 'Myself, experiencing an adventure'],
+            // subject: classes[5]._id,
+            year: [1]
+        },
+        {
+            question: "Which of these magical events would you most like to experience?",
+            answerOptions: ['Triwizard Tournament', 'Quidditch world Cub', 'The Yule Ball', 'Christmas at Hogwarts'],
+            // subject: classes[5]._id,
+            year: [1]
+        },
+        {
+            question: "Choose a Deathly Hallow.",
+            answerOptions: ['The Elder Wand', 'The Resurrection Stone', 'The Cloak of Invisibility', 'None'],
+            // subject: classes[5]._id,
+            year: [1]
+        },
+        {
+            question: "Given the choice, would you rather invent a potion that would guarantee you",
+            answerOptions: ['Glory', 'Wisdom', 'Love', 'Power'],
+            // subject: classes[5]._id,
+            year: [1]
+        },
+        {
+            question: "What kind of instrument most pleases your ear?",
+            answerOptions: ['Violin', 'Drums', 'Piano', 'Trumpet'],
+            // subject: classes[5]._id,
+            year: [1]
+        },
+        {
+            question: "which Hogwarts house do you feel you identify with most closely",
+            answerOptions: ['Gryffindor', 'Hufflepuff', 'Ravenclaw', 'Slytherin'],
+            // subject: classes[5]._id,
+            year: [1]
+        }
     ])
     console.log('Questions seeded')
 
@@ -449,7 +621,7 @@ db.once('open', async () => {
             description: 'ipsum lorem',
             professor: 'Minerva McGonagall',
             image: 'professor_mcgonagall',
-            quizzes: [quizzes[0], quizzes[1], quizzes[2]],
+            quizzes: [quizzes[0], quizzes[1], quizzes[2], quizzes[3], quizzes[4], quizzes[5], quizzes[6], quizzes[7], quizzes[8], quizzes[9], quizzes[10], quizzes[11], quizzes[12], quizzes[13], quizzes[14]],
             year: [1, 2, 3]
         },
         {
@@ -457,13 +629,15 @@ db.once('open', async () => {
             description: 'ipsim lorem',
             professor: 'Severus Snape',
             image: 'professor_snape',
+            quizzes: [quizzes[30], quizzes[31], quizzes[32], quizzes[33], quizzes[34], quizzes[35], quizzes[36], quizzes[37], quizzes[38], quizzes[39], quizzes[40], quizzes[41], quizzes[42], quizzes[43], quizzes[44], quizzes[45]],
             year: [1, 2, 3]
         },
         {
             name: 'charms',
             description: 'ipsim lorem',
             professor: 'Filius Flitwick',
-            image: 'professor_snape',
+            image: 'professor_flitwick',
+            quizzes: [quizzes[46], quizzes[47], quizzes[48], quizzes[49], quizzes[50], quizzes[51], quizzes[52], quizzes[53], quizzes[54], quizzes[55], quizzes[56], quizzes[57], quizzes[58], quizzes[59], quizzes[60], quizzes[61]],
             year: [1, 2, 3]
         },
         {
@@ -471,6 +645,7 @@ db.once('open', async () => {
             description: 'ipsim lorem',
             professor: 'Cuthbert Binns',
             image: 'professor_binns',
+            quizzes: [quizzes[62], quizzes[63], quizzes[64], quizzes[65], quizzes[66], quizzes[67], quizzes[68], quizzes[69], quizzes[70], quizzes[71], quizzes[72], quizzes[73], quizzes[74], quizzes[75], quizzes[76]],
             year: [1, 2, 3]
         },
         {
@@ -478,13 +653,15 @@ db.once('open', async () => {
             description: 'ipsum lorem',
             professor: 'Quirinus Quirrell',
             image: 'professor_quirrell',
-            year: [1]
+            quizzes: [quizzes[15], quizzes[16], quizzes[17], quizzes[18], quizzes[19], quizzes[20], quizzes[21], quizzes[22], quizzes[23], quizzes[24], quizzes[25], quizzes[26], quizzes[27], quizzes[28], quizzes[29]],
+            year: [1, 2, 3]
         },
         {
             name: 'sorting',
             description: 'ipsim lorem',
             professor: 'Sorting Hat',
-            image: 'sorting_hat',
+            image: 'great_hall_sorting',
+            quizzes: [quizzes[77], quizzes[78], quizzes[79], quizzes[80], quizzes[81], quizzes[82], quizzes[83], quizzes[84], quizzes[85], quizzes[86], quizzes[87]],
             year: [1]
         }
     ])
