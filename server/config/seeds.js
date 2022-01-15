@@ -17,8 +17,37 @@ db.once('open', async () => {
             professor: 'Severus Snape',
             image: 'professor_snape',
             year: [1, 2, 3]
+        },
+        {
+            name: 'charms',
+            description: 'ipsim lorem',
+            professor: 'Filius Flitwick',
+            image: 'professor_snape',
+            year: [1, 2, 3]
+        },
+        {
+            name: 'history of magic',
+            description: 'ipsim lorem',
+            professor: 'Cuthbert Binns',
+            image: 'professor_binns',
+            year: [1, 2, 3]
+        },
+        {
+            name: 'defense against the dark arts',
+            description: 'ipsum lorem',
+            professor: 'Quirinus Quirrell',
+            image: 'professor_quirrell',
+            year: [1]
+        },
+        {
+            name: 'sorting',
+            description: 'ipsim lorem',
+            professor: 'Sorting Hat',
+            image: 'sorting_hat',
+            year: [1]
         }
     ])
+    console.log('Classes seeded.')
 
     await Trivia.deleteMany();
 
@@ -31,6 +60,7 @@ db.once('open', async () => {
             year: [1]
         }
     ])
+    console.log('Questions seeded')
 
     console.log('All seeds added')
     process.exit();
