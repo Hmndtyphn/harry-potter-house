@@ -21,8 +21,11 @@ const resolvers = {
       return User.find().select("-__v -password").populate("wand");
     },
     classes: async () => {
-      return Class.find();
+      return Class.find().populate('quizzes')
     },
+    trivia: async () => {
+        return Trivia.find().populate('subject')
+    }
   },
   Mutation: {
     addUser: async (parent, args) => {
