@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Class, Trivia } = require("../models");
+const { User, Subject, Question } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
@@ -20,11 +20,11 @@ const resolvers = {
     users: async () => {
       return User.find().select("-__v -password").populate("wand");
     },
-    classes: async () => {
-      return Class.find().populate('quizzes')
+    subjects: async () => {
+      return Subject.find().populate('questions')
     },
-    trivia: async () => {
-        return Trivia.find().populate('subject')
+    questions: async () => {
+        return Question.find().populate('subject')
     }
   },
   Mutation: {

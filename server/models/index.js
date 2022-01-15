@@ -1,6 +1,6 @@
 const User = require('./User');
-const Class = require('./Class');
-const Trivia = require('./Trivia');
+const Subject = require('./Subject');
+const Question = require('./Question');
 
 
-module.exports = { User, Trivia, Class };
+module.exports = { User, Question, Subject };
