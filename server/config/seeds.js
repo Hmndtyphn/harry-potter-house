@@ -160,6 +160,32 @@ db.once('open', async () => {
     ])
     console.log('Questions seeded')
 
+    await User.deleteMany()
+
+    const user = await User.insertMany([
+        {
+            username: "Timmons51",
+            email: "timmons@gmail.com",
+            password: "123456"
+        }, 
+        {
+            username: "Salazar",
+            email: "slytherin@gmail.com",
+            password: "123456"
+        }, 
+        {
+            username: "Harvey",
+            email: "Harvey@gmail.com",
+            password: "123456"
+        }, 
+        {
+            username: "colon_King",
+            email: "kingcolon@gmail.com",
+            password: "123456"
+        }, 
+
+    ])
+
     console.log('All seeds added')
     process.exit();
 })
