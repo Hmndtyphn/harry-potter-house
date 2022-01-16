@@ -52,7 +52,7 @@ function Nav() {
   function showNav() {
     if (
       currentLocation !== "greathall" ||
-      currentLocation !== "house" /* && Auth.loggedIn */
+      currentLocation !== "house" /* rewrite to render properly */
     ) {
       return (
         <ul>

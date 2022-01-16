@@ -15,7 +15,9 @@ import GreatHall from '../src/pages/GreatHall';
 import Classroom from '../src/pages/Classroom';
 import House from './pages/House';
 
+import Auth from "./utils/auth";
 import Nav from './components/Nav';
+import NoMatch from './pages/NoMatch';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -38,7 +40,7 @@ const client = new ApolloClient({
 
 // import sections from file structure
 function App() {
-  
+    
 
   // Add routes instead here (look at app.js in shop shop)
   return (
@@ -46,15 +48,21 @@ function App() {
       <Router>
       <div>
         <StoreProvider>
+          {Auth.loggedIn() ? (
         <div>
         <Nav />
         <Switch>
-          <Route exact path="/" component={Landing} />
           <Route exact path="/house" component={House} />
           <Route exact path="/classroom/:name" component={Classroom} />
           <Route exact path="/greathall" component={GreatHall} />
         </Switch>
         </div>
+          ) : (
+          <Switch>
+          <Route exact path="/" component={Landing} />
+          <Route component={NoMatch} />
+          </Switch>
+          )}  
         </StoreProvider>
       </div>
       </Router>
