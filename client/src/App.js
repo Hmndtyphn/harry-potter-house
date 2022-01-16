@@ -48,7 +48,6 @@ function App() {
       <Router>
       <div>
         <StoreProvider>
-          {Auth.loggedIn() ? (
         <div>
         <Nav />
         <Switch>
@@ -57,12 +56,12 @@ function App() {
           <Route exact path="/greathall" component={GreatHall} />
         </Switch>
         </div>
-          ) : (
+           : (
           <Switch>
           <Route exact path="/" component={Landing} />
           <Route component={NoMatch} />
           </Switch>
-          )}  
+          )
         </StoreProvider>
       </div>
       </Router>

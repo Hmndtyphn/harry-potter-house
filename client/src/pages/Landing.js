@@ -2,9 +2,10 @@ import React from 'react';
 import { Button, Container } from '@mui/material';
 import { useMutation } from '@apollo/client';
 import { Link } from 'react-router-dom';
+import Login from '../components/Login';
 
 
-const Login = (props) => {
+const Landing = (props) => {
 
   return (
     <div>
@@ -12,6 +13,7 @@ const Login = (props) => {
       <Link to="/login">
         <Button variant='contained'>Login</Button>
       </Link>
+      <Login />
       <Link to="/signup">
         <Button variant='contained'>Enroll</Button>
       </Link>
@@ -19,4 +21,4 @@ const Login = (props) => {
   )
 };
 
-export default Login;
+export default Landing;
