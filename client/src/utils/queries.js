@@ -1,15 +1,14 @@
-// branch 8
-import { gql } from '@apollo/client';
+// branch PMT-8
+import { gql } from "@apollo/client";
 
-export const QUERY_ALL_USERS = gql`
+export const QUERY_ME = gql`
   {
-    users {
+    me {
       _id
       username
       email
       house
       wand {
-        _id
         core
         wood
         length
@@ -18,42 +17,35 @@ export const QUERY_ALL_USERS = gql`
   }
 `;
 
-export const QUERY_ONE_USER = gql`
+export const QUERY_ALL_CLASSES = gql`
   {
-    user {
-      _id
-      username
-      email
-      house
-      wand {
-        _id
-        core
-        wood
-        length
-      }
-    }
-  }
-`;
-
-export const  QUERY_ALL_QUESTIONS = gql`
-  {
+    query
     classes {
       _id
       name
       description
       professor
       image
-      quizzes {
-        _id
-        subject {
-          name
-          professor
-        }
+      year
+    }
+  }
+`;
+
+export const QUERY_CLASS = gql`
+{
+  query class($name: String!) {
+    class(name: $name) {
+      _id
+      name
+      description
+      professor
+      image
+      questions {
         question
         answerOptions
         isCorrect
       }
-      year
     }
   }
+}
 `;
