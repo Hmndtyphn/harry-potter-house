@@ -9,10 +9,6 @@ const QuestionSchema = new Schema(
         isCorrect: {
             type: String
         },
-        subject: {
-            type: Schema.Types.ObjectId,
-            ref: 'Subject'
-        },
         year: {
             type: [Number]
         }

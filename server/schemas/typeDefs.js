@@ -22,7 +22,6 @@ const typeDefs = gql`
         question: String
         answerOptions: [String]
         isCorrect: String
-        subject: Subject
         year: [Int]
     }
 

@@ -24,7 +24,7 @@ const resolvers = {
       return Subject.find().populate('questions')
     },
     questions: async () => {
-        return Question.find().populate('subject')
+        return Question.find()
     }
   },
   Mutation: {
