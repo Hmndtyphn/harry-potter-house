@@ -1,5 +1,6 @@
 import { gql } from "@apollo/client";
 
+// query just ME (single user)
 export const QUERY_ME = gql`
   {
     me {
@@ -16,6 +17,7 @@ export const QUERY_ME = gql`
   }
 `;
 
+// query all classes
 export const QUERY_ALL_CLASSES = gql`
   {
     query
@@ -30,6 +32,7 @@ export const QUERY_ALL_CLASSES = gql`
   }
 `;
 
+// query one class
 export const QUERY_CLASS = gql`
 {
   query class($name: String!) {
@@ -44,6 +47,22 @@ export const QUERY_CLASS = gql`
         answerOptions
         isCorrect
       }
+    }
+  }
+}
+`;
+
+// query all users per a house
+export const QUERY_ALL_USERS = gql`
+{
+  users {
+    _id
+    username
+    house
+    wand {
+      core
+      wood
+      length
     }
   }
 }

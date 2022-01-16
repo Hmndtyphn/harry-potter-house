@@ -54,6 +54,7 @@ export const UPDATE_USER = gql`
 )
 `;
 
+
 // revisit DELETE mutation (may not need this for requirements) idea of this from Dgraph documentation website
 
 // export const DELETE_USER = gql` 
