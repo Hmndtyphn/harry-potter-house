@@ -1,4 +1,5 @@
-// branch PMT-8
+// PMT-8 JE this is for you
+
 import { gql } from "@apollo/client";
 
 export const QUERY_ME = gql`
