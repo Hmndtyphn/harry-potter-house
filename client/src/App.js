@@ -10,15 +10,15 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import { StoreProvider } from './utils/GlobalState';
 
-import Login from '../src/pages/Login';
+import Login from './pages/Landing';
 import Signup from '../src/pages/Signup';
 import Classroom from '../src/pages/Classroom'
 import GreatHall from '../src/components/GreatHall/GreatHall';
-import CommonRoom from './pages/CommonRoom';
+import CommonRoom from './pages/House';
 
 import Nav from '../src/components/Nav/Nav';
 import Charms from '../src/components/Charms/Charms';
-import DefDarkArts from '../src/components/DefDarkArts/DefDarkArts';
+import DefDarkArts from './components/Quiz/Ouiz';
 import HistoryMagic from '../src/components/HistoryMagic/HistoryMagic';
 import Potions from '../src/components/Potions/Potions';
 
