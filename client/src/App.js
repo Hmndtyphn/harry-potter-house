@@ -10,17 +10,12 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import { StoreProvider } from './utils/GlobalState';
 
-import Login from './pages/Landing';
-import Signup from '../src/pages/Signup';
-import Classroom from '../src/pages/Classroom'
-import GreatHall from '../src/components/GreatHall/GreatHall';
-import CommonRoom from './pages/House';
+import Landing from './pages/Landing';
+import GreatHall from '../src/pages/GreatHall';
+import Classroom from '../src/pages/Classroom';
+import House from './pages/House';
 
-import Nav from '../src/components/Nav/Nav';
-import Charms from '../src/components/Charms/Charms';
-import DefDarkArts from './components/Quiz/Ouiz';
-import HistoryMagic from '../src/components/HistoryMagic/HistoryMagic';
-import Potions from '../src/components/Potions/Potions';
+import Nav from './components/Nav';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -43,34 +38,7 @@ const client = new ApolloClient({
 
 // import sections from file structure
 function App() {
-  const [sections] = useState([
-    // nav bar sections for page scroll
-    {
-      name: 'The Great Hall',
-      component: <GreatHall />
-    },
-
-    {
-      name: 'Charms',
-      component: <Charms />
-    },
-
-    {
-      name: 'Defense Against the Dark Arts',
-      component: <DefDarkArts />
-    },
-
-    {
-      name: 'History of Magic',
-      component: <HistoryMagic />
-    },
-
-    {
-      name: 'Potions',
-      component: <Potions />
-    }
-
-  ])
+  
 
   // Add routes instead here (look at app.js in shop shop)
   return (
@@ -81,9 +49,8 @@ function App() {
         <div>
         <Nav />
         <Switch>
-          <Route exact path="/" component={Signup} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/commonroom" component={CommonRoom} />
+          <Route exact path="/" component={Landing} />
+          <Route exact path="/house" component={House} />
           <Route exact path="/classroom/:name" component={Classroom} />
           <Route exact path="/greathall" component={GreatHall} />
         </Switch>

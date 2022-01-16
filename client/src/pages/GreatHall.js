@@ -1,20 +1,17 @@
 import React from "react";
-import CommonRoom from './CommonRoom'
-import DefDarkArts from "../components/DefDarkArts/DefDarkArts";
-import Potions from "../components/Potions/Potions";
-import Charms from "../components/Charms/Charms";
-import HistoryMagic from "../components/HistoryMagic/HistoryMagic";
 
-// in Great Hall, link to Common Room
-// Will display all house points
-// Cards/Doors that link to classrooms
+// in Great Hall, link to House
+// Will display all house points, pull props from Global State
+// Map out classes to display Cards/Doors that link to classrooms
+// Logout Link, need to build still
+// Style with @material/mui
 
 
 const GreatHall = () => {
   return (
     <div>
       <p>Good Morning Everyone!</p>
-      <CommonRoom />
+
     </div>
   )
 };
