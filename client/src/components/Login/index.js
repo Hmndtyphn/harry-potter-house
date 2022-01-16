@@ -8,8 +8,8 @@ import { LOGIN } from '../../utils/mutations';
 
 
 function Login() {
-    const [formState, setFormState] = useState({email: '', password: ''});
-    const [login, {error}] = useMutation(LOGIN);
+    // const [formState, setFormState] = useState({email: '', password: ''});
+    // const [login, {error}] = useMutation(LOGIN);
     return(
         <Box>
             <Container>

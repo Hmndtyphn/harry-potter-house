@@ -40,30 +40,26 @@ const client = new ApolloClient({
 
 // import sections from file structure
 function App() {
-    
+
 
   // Add routes instead here (look at app.js in shop shop)
   return (
     <ApolloProvider client={client}>
       <Router>
-      <div>
-        <StoreProvider>
         <div>
-        <Nav />
-        <Switch>
-          <Route exact path="/house" component={House} />
-          <Route exact path="/classroom/:name" component={Classroom} />
-          <Route exact path="/greathall" component={GreatHall} />
-        </Switch>
+          <StoreProvider>
+            <div>
+              <Nav />
+              <Switch>
+                <Route exact path="/" component={Landing} />
+                <Route exact path="/house" component={House} />
+                <Route exact path="/classroom/:name" component={Classroom} />
+                <Route exact path="/greathall" component={GreatHall} />
+              </Switch>
+            </div>
+
+          </StoreProvider>
         </div>
-           : (
-          <Switch>
-          <Route exact path="/" component={Landing} />
-          <Route component={NoMatch} />
-          </Switch>
-          )
-        </StoreProvider>
-      </div>
       </Router>
     </ApolloProvider>
   );
