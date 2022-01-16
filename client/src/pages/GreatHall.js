@@ -1,4 +1,8 @@
 import React from "react";
+import { Button, Container } from '@mui/material';
+import { Link } from "react-router-dom";
+import { useQuery } from "@apollo/client";
+
 
 // in Great Hall, link to House
 // Will display all house points, pull props from Global State
@@ -11,6 +15,7 @@ const GreatHall = () => {
   return (
     <div>
       <p>Good Morning Everyone!</p>
+      
 
     </div>
   )

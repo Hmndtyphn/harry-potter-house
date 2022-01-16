@@ -3,8 +3,6 @@ import { Button, Container } from '@mui/material';
 import { useMutation } from '@apollo/client';
 import { Link } from 'react-router-dom';
 
-import login from '../components/Login';
-import signup from '../components/SignUp'
 
 const Login = (props) => {
 
