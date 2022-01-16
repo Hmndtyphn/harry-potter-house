@@ -54,26 +54,17 @@ export const UPDATE_USER = gql`
 )
 `;
 
-export const DELETE_USER = gql` 
-  mutation deleteUser(
+// revisit DELETE mutation (may not need this for requirements) idea of this from Dgraph documentation website
 
-      $username: String!
-      $email: String!
-      password: String!
-    ) {
-      deleteUser(
-        username: $username
-        email: $email
-        password: $password
-      ) {
-        token
-        user {
-          _id
-          username
-        }
-      }
-   }
-
-)
-`;
-
+// export const DELETE_USER = gql` 
+//   mutation deleteUser($filter: UserFilter!) {
+//     deleteUser(filter: $filter) {
+//       me
+//       user {
+//         username
+//         email
+//         password
+//       }
+//     }
+//   }
+// `;
