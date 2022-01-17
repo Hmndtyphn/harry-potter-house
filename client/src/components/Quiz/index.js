@@ -32,7 +32,7 @@ const Quiz = () => {
 
         <Grid item xs={5}>
           <Container className="background">
-          <Result />
+          {/* <Result /> */}
           </Container>
         </Grid>
       </Grid>

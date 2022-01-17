@@ -19,7 +19,8 @@ export const QUERY_ME = gql`
 
 // query all classes
 export const QUERY_ALL_CLASSES = gql`
-  query subjects {
+  query {
+    subjects {
     _id
     name
     description
@@ -27,6 +28,7 @@ export const QUERY_ALL_CLASSES = gql`
     image
     year
   }
+}
 `;
 
 // query one class
