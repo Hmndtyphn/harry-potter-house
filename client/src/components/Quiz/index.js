@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { Container, Typography, Grid, Box } from "@mui/material";
 import Result from "../Result";
@@ -16,7 +16,6 @@ import { QUERY_CLASS } from "../../utils/queries";
 
 const Quiz = () => {
   const { name } = useParams();
-  console.log(name);
 
   const { loading, data } = useQuery(QUERY_CLASS, {
     variables: { name },
@@ -24,86 +23,84 @@ const Quiz = () => {
 
   const subject = data?.subject || {};
   const { questions, image, professor } = subject;
-  console.log("This is questions ==>", questions);
+  console.log("index.js >> Quiz >> line 26 >> questions ==>", questions);
+  const [currentQuestion, setCurrentQuestion] = useState(0)
 
+  // shuffle function so every quiz is not the same
   function shuffle(array) {
-  return Math.floor(Math.random() * array.length);
+    return Math.floor(Math.random() * array.length);
   }
 
+  // start quiz as soon as user hits link
   function generateQuestions() {
-    // empty array to hold Qs
-    var quizQuestions = [];
 
-    // while the length of endPassword is less than 5
+    // empty array to hold randomized quiz questions
+    const quizQuestions = [];
+
+    // push a random question as long as the length of the array is less than 5
     while (quizQuestions.length < 5) {
       const randomQuestion = shuffle(questions);
       quizQuestions.push(questions[randomQuestion]);
     }
 
-    console.log("QUIZQs ==>", quizQuestions);
+    console.log("Quiz >> index.js >> line 46 >> randomized questions:", quizQuestions)
+    return (
+      <Container>
+        <Typography variant="h5" sx={{py: 5}}>
+          {quizQuestions[currentQuestion].question}
+        </Typography>
+      </Container>
+    )
+
   }
 
-  // start the quiz
-  function startQuiz() {
-    const shuffledQuestions = Math.floor(Math.random() * questions.length);
-
-    console.log("ShuffleQ ===>", shuffledQuestions);
-    
-    setNextQuestion()
-  }
-
-// Might be able to take out 
-  function setNextQuestion() {
+  // generateQuestions();
+  // clear out component holding question, then set next question
+  // function setNextQuestion() {
     // find the way to clear the div or component
     // add next question 
     // Thats it! :)  
 
-    let userAnswer = event.target.value
-
-    showQuestion(shuffledQuestions[currentQuestionIndex]);
-  }
-
-  // function gradeQuiz(){
-  //   passes answers to the grading div
   // }
+
+  // set empty array for user answers to pass to results component to grade
 
   if (loading) {
     return <div>Loading...</div>;
   }
+
   return (
     <Box sx={{ px: -100, pt: 0, pb: 15 }}>
       <Typography
-        class="title"
+        className="title"
         variant="h1"
         component="h1"
-        align="Center"
+        align="center"
         sx={{ pt: 10 }}
         gutterBottom
       >
-        {name}
-        {startQuiz()}
-        {generateQuestions()}
+        {name} Quiz
       </Typography>
-
+      
       <Grid
         container
         sx={{ display: "flex", flexWrap: "wrap", justifyContent: "flex" }}
         alignItems="center"
       >
-        <Grid item xs>
+        <Grid item xs align='center'>
           {/* images */}
           <Container>
             <img
               src={images}
-              style={{ height: "100%", width: "100%" }}
+              style={{ height: "25rem", width: "25rem" }}
               align="center"
               alt="Professor Snape"
             />
           </Container>
         </Grid>
 
-        <Grid item xs={5}>
-          <Container class="background">{/* <Result /> */}</Container>
+        <Grid item xs={5} align='center'>
+          <Container className="background">{generateQuestions()}</Container>
         </Grid>
       </Grid>
     </Box>

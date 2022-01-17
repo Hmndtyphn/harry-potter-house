@@ -7,12 +7,6 @@ import { Link, useParams } from "react-router-dom";
 
 import { Button, Container, Typography } from "@mui/material";
 
-import Quiz from "../components/Quiz";
-import { render } from "@testing-library/react";
-
-// Where we take the quizzes
-// Import props from global state
-// Quiz total, points to add to house score
 
 const Classroom = () => {
   // grab name from params
@@ -25,8 +19,6 @@ const Classroom = () => {
 
   const subject = data?.subject || {};
   const { description, image, professor, questions } = subject;
-
-  console.log("classroom.js >> line 28 >> class data:", questions);
 
   const styledDiv = {
     backgroundImage: `url(${potionsImage})`,
