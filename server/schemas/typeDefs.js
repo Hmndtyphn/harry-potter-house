@@ -46,7 +46,7 @@ const typeDefs = gql`
         user(username: String!): User
         questions: [Question]
         subjects: [Subject]
-        subject(subject: String!): Subject
+        subject(name: String!): Subject
     }
 
     type Mutation {

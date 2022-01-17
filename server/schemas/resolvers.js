@@ -23,6 +23,9 @@ const resolvers = {
     subjects: async () => {
       return Subject.find().populate('questions')
     },
+    subject: async (parent, { name }) => {
+      return Subject.findOne({ name }).populate('questions')
+    },
     questions: async () => {
         return Question.find()
     }

@@ -21,7 +21,7 @@ export const QUERY_ME = gql`
 export const QUERY_ALL_CLASSES = gql`
   {
     query
-    classes {
+    subjects {
       _id
       name
       description
@@ -35,8 +35,8 @@ export const QUERY_ALL_CLASSES = gql`
 // query one class
 export const QUERY_CLASS = gql`
 {
-  query class($name: String!) {
-    class(name: $name) {
+  query subject($name: String!) {
+    subject(name: $name) {
       _id
       name
       description
