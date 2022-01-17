@@ -16,28 +16,25 @@ import Result from '../components/Result';
 
 const Classroom = () => {
   // grab name from params
-  const { name: subject } = useParams();
+  const { name } = useParams();
 
   // use useQuery(Apollo) to make query request
   const { loading, data } = useQuery(QUERY_CLASS, {
-    variables: { name: subject }
+    variables: { name }
   });
 
-  const { description, image, name, professor, questions } = data.subject
+  console.log('classroom.js >> line 24 >> class data:', data.subject)
+  // const { description, image, name, professor, questions } = data.subject
   
   const styledDiv={
-    backgroundImage: `url(${image})`,
+    backgroundImage: `url(${potionsImage})`,
     height:'100vh'
   }
 
-  console.log('classroom.js >> line 24 >> class data:', data)
-
   return (
     <div style={styledDiv}>
-      Welcome to {`${name}`} with {`${professor}`}. Take out your text and prepare to start your quiz.
-      <Button>
+    Take out your text and prepare to start your quiz.
       Start Quiz
-      </Button>
     </div>
   )
 };
