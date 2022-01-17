@@ -19,22 +19,18 @@ export const QUERY_ME = gql`
 
 // query all classes
 export const QUERY_ALL_CLASSES = gql`
-  {
-    query
-    subjects {
-      _id
-      name
-      description
-      professor
-      image
-      year
-    }
+  query subjects {
+    _id
+    name
+    description
+    professor
+    image
+    year
   }
 `;
 
 // query one class
 export const QUERY_CLASS = gql`
-{
   query subject($name: String!) {
     subject(name: $name) {
       _id
@@ -49,13 +45,11 @@ export const QUERY_CLASS = gql`
       }
     }
   }
-}
 `;
 
 // query all users per a house
 export const QUERY_ALL_USERS = gql`
-{
-  users {
+  query users {
     _id
     username
     house
@@ -64,6 +58,4 @@ export const QUERY_ALL_USERS = gql`
       wood
       length
     }
-  }
-}
-`;
+  }`;
