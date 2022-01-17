@@ -1,1 +1,2 @@
 export const UPDATE_SUBJECTS = "UPDATE_SUBJECTS";
+export const UPDATE_HOUSE = "UPDATE_HOUSE";

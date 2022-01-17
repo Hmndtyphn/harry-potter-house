@@ -17,6 +17,8 @@ import House from './pages/House';
 
 import Auth from "./utils/auth";
 import Nav from './components/Nav';
+import SignUp from './components/SignUp';
+import LoginPage from './components/Login';
 import NoMatch from './pages/NoMatch';
 
 const httpLink = createHttpLink({
@@ -52,6 +54,8 @@ function App() {
               <Nav />
               <Switch>
                 <Route exact path="/" component={Landing} />
+                <Route exact path="/login" component={LoginPage} />
+                <Route exact path="/signup" component={SignUp} />
                 <Route exact path="/house" component={House} />
                 <Route exact path="/classroom/:name/:quiz?" component={Classroom} />
                 <Route exact path="/greathall" component={GreatHall} />
