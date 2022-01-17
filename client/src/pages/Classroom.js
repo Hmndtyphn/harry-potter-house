@@ -1,14 +1,14 @@
-import React from 'react';
-import { useQuery } from '@apollo/client';
-import { QUERY_CLASS } from '../utils/queries';
-import  potionsImage from '../assets/images/potionsclass.jpeg';
+import React from "react";
+import { useQuery } from "@apollo/client";
+import { QUERY_CLASS } from "../utils/queries";
+import potionsImage from "../assets/images/potionsclass.jpeg";
 
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams } from "react-router-dom";
 
-import { Button } from '@mui/material'
+import { Button, Container } from "@mui/material";
 
-import Quiz from '../components/Quiz';
-import Result from '../components/Result';
+import Quiz from "../components/Quiz";
+import { render } from "@testing-library/react";
 
 // Where we take the quizzes
 // Import props from global state
@@ -20,24 +20,39 @@ const Classroom = () => {
 
   // use useQuery(Apollo) to make query request
   const { loading, data } = useQuery(QUERY_CLASS, {
-    variables: { name }
+    variables: { name },
   });
 
-  console.log('classroom.js >> line 24 >> class data:', data)
-  // const { description, image, name, professor, questions } = data.subject
-  
-  const styledDiv={
+  const subject = data?.subject || {};
+  const { description, image, professor, questions } = subject;
+
+  console.log("classroom.js >> line 28 >> class data:", questions);
+
+
+  const styledDiv = {
     backgroundImage: `url(${potionsImage})`,
-    height:'100vh'
+    height: "100vh",
+    color: "white",
+  };
+
+  if (loading) {
+    return <div>Loading...</div>;
   }
 
   return (
     <div style={styledDiv}>
-    Take out your text and prepare to start your quiz.
-      Start Quiz
+      <Container>
+        Welcome to {`${name}`} with Professor {`${professor}`} where you will
+        learn {`${description}`}. Take out your text and prepare to start your
+        quiz.
+      </Container>
+      <Container>
+        <Link to={`/classroom/${name}/quiz`}>
+          <Button>Start Quiz</Button>
+        </Link>
+      </Container>
     </div>
-  )
+  );
 };
 
 export default Classroom;
-
