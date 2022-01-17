@@ -59,6 +59,7 @@ function App() {
                 <Route exact path="/house" component={House} />
                 <Route exact path="/classroom/:name/:quiz?" component={Classroom} />
                 <Route exact path="/greathall" component={GreatHall} />
+                <Route component={NoMatch} />
               </Switch>
             </div>
 
