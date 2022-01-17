@@ -23,7 +23,7 @@ const Classroom = () => {
     variables: { name }
   });
 
-  console.log('classroom.js >> line 24 >> class data:', data.subject)
+  console.log('classroom.js >> line 24 >> class data:', data)
   // const { description, image, name, professor, questions } = data.subject
   
   const styledDiv={
