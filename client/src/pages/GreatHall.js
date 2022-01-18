@@ -40,7 +40,7 @@ const GreatHall = () => {
     width: "100%",
     color: "white",
     justifyContent: "center",
-    alignItems: "flex-start",
+    alignItems:"flex-start",
   };
   
 

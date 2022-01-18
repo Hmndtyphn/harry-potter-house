@@ -18,6 +18,8 @@ import House from './pages/House';
 import Auth from "./utils/auth";
 import Nav from './components/Nav';
 import NoMatch from './pages/NoMatch';
+import Footer from './components/Footer';
+
 
 const httpLink = createHttpLink({
   uri: 'http://localhost:3001/graphql',
