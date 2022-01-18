@@ -50,6 +50,7 @@ const GreatHall = () => {
     backgroundImage: `url(${hufflepuff})`,
     height: "100vh", 
   };
+  // ravenclaw is amazing
   const RavenclawImage = {
     backgroundImage: `url(${hufflepuff})`,
     height: "100vh", 
