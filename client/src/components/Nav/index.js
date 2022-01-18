@@ -49,11 +49,9 @@ const StyledLink = styled((props) => <LinkTab {...props} />)(({ theme }) => ({
 function Nav() {
   const { currentLocation } = useParams();
 
+  //  Do we want conditional rendering of the nav when logged
   function showNav() {
-    if (
-      currentLocation !== "greathall" ||
-      currentLocation !== "house" /* rewrite to render properly */
-    ) {
+    if (Auth.loggedIn()) {
       return (
         <ul>
           <li>
@@ -65,6 +63,21 @@ function Nav() {
         </ul>
       );
     }
+    // if (
+    //   currentLocation !== "greathall" ||
+    //   currentLocation !== "house" /* rewrite to render properly */
+    // ) {
+    //   return (
+    //     <ul>
+    //       <li>
+    //         <Link to="/greathall">Great Hall</Link>
+    //       </li>
+    //       <li>
+    //         <Link to="/house">Common Room</Link>
+    //       </li>
+    //     </ul>
+    //   );
+    // }
   }
 
   // returns above functions and maps as navbar html
