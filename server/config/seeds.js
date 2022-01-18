@@ -1,11 +1,11 @@
 const db = require('./connection');
-const { User, Class, Trivia } = require('../models');
+const { User, Subject, Question } = require('../models');
 
 db.once('open', async () => {
     
-    await Trivia.deleteMany();
+    await Question.deleteMany();
 
-    const quizzes = await Trivia.insertMany([
+    const questions = await Question.insertMany([
         {
             question: "Who is the author of A Beginner's Guide to Transfiguration?",
             answerOptions: ['Gilderoy Lockhart', 'Emerick Switch', 'Newt Scamander', 'Miranda Goshawk'],
@@ -614,14 +614,14 @@ db.once('open', async () => {
     ])
     console.log('Questions seeded')
 
-    await Class.deleteMany();
-    const classes = await Class.insertMany([
+    await Subject.deleteMany();
+    const subjects = await Subject.insertMany([
         {
             name: 'transfiguration',
             description: 'ipsum lorem',
             professor: 'Minerva McGonagall',
             image: 'professor_mcgonagall',
-            quizzes: [quizzes[0], quizzes[1], quizzes[2], quizzes[3], quizzes[4], quizzes[5], quizzes[6], quizzes[7], quizzes[8], quizzes[9], quizzes[10], quizzes[11], quizzes[12], quizzes[13], quizzes[14]],
+            questions: [questions[0], questions[1], questions[2], questions[3], questions[4], questions[5], questions[6], questions[7], questions[8], questions[9], questions[10], questions[11], questions[12], questions[13], questions[14]],
             year: [1, 2, 3]
         },
         {
@@ -629,7 +629,7 @@ db.once('open', async () => {
             description: 'ipsim lorem',
             professor: 'Severus Snape',
             image: 'professor_snape',
-            quizzes: [quizzes[30], quizzes[31], quizzes[32], quizzes[33], quizzes[34], quizzes[35], quizzes[36], quizzes[37], quizzes[38], quizzes[39], quizzes[40], quizzes[41], quizzes[42], quizzes[43], quizzes[44], quizzes[45]],
+            questions: [questions[30], questions[31], questions[32], questions[33], questions[34], questions[35], questions[36], questions[37], questions[38], questions[39], questions[40], questions[41], questions[42], questions[43], questions[44], questions[45]],
             year: [1, 2, 3]
         },
         {
@@ -637,7 +637,7 @@ db.once('open', async () => {
             description: 'ipsim lorem',
             professor: 'Filius Flitwick',
             image: 'professor_flitwick',
-            quizzes: [quizzes[46], quizzes[47], quizzes[48], quizzes[49], quizzes[50], quizzes[51], quizzes[52], quizzes[53], quizzes[54], quizzes[55], quizzes[56], quizzes[57], quizzes[58], quizzes[59], quizzes[60], quizzes[61]],
+            questions: [questions[46], questions[47], questions[48], questions[49], questions[50], questions[51], questions[52], questions[53], questions[54], questions[55], questions[56], questions[57], questions[58], questions[59], questions[60], questions[61]],
             year: [1, 2, 3]
         },
         {
@@ -645,7 +645,7 @@ db.once('open', async () => {
             description: 'ipsim lorem',
             professor: 'Cuthbert Binns',
             image: 'professor_binns',
-            quizzes: [quizzes[62], quizzes[63], quizzes[64], quizzes[65], quizzes[66], quizzes[67], quizzes[68], quizzes[69], quizzes[70], quizzes[71], quizzes[72], quizzes[73], quizzes[74], quizzes[75], quizzes[76]],
+            questions: [questions[62], questions[63], questions[64], questions[65], questions[66], questions[67], questions[68], questions[69], questions[70], questions[71], questions[72], questions[73], questions[74], questions[75], questions[76]],
             year: [1, 2, 3]
         },
         {
@@ -653,7 +653,7 @@ db.once('open', async () => {
             description: 'ipsum lorem',
             professor: 'Quirinus Quirrell',
             image: 'professor_quirrell',
-            quizzes: [quizzes[15], quizzes[16], quizzes[17], quizzes[18], quizzes[19], quizzes[20], quizzes[21], quizzes[22], quizzes[23], quizzes[24], quizzes[25], quizzes[26], quizzes[27], quizzes[28], quizzes[29]],
+            questions: [questions[15], questions[16], questions[17], questions[18], questions[19], questions[20], questions[21], questions[22], questions[23], questions[24], questions[25], questions[26], questions[27], questions[28], questions[29]],
             year: [1, 2, 3]
         },
         {
@@ -661,11 +661,11 @@ db.once('open', async () => {
             description: 'ipsim lorem',
             professor: 'Sorting Hat',
             image: 'great_hall_sorting',
-            quizzes: [quizzes[77], quizzes[78], quizzes[79], quizzes[80], quizzes[81], quizzes[82], quizzes[83], quizzes[84], quizzes[85], quizzes[86], quizzes[87]],
+            questions: [questions[77], questions[78], questions[79], questions[80], questions[81], questions[82], questions[83], questions[84], questions[85], questions[86], questions[87]],
             year: [1]
         }
     ])
-    console.log('Classes seeded.')
+    console.log('Subjects seeded.')
 
 
     await User.deleteMany()

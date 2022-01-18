@@ -1,6 +1,6 @@
 const { Schema, model  } = require('mongoose');
 
-const TriviaSchema = new Schema(
+const QuestionSchema = new Schema(
     {
         question: {
             type: String
@@ -8,10 +8,6 @@ const TriviaSchema = new Schema(
         answerOptions: [String],
         isCorrect: {
             type: String
-        },
-        subject: {
-            type: Schema.Types.ObjectId,
-            ref: 'Class'
         },
         year: {
             type: [Number]
@@ -25,6 +21,6 @@ const TriviaSchema = new Schema(
     }
 );
 
-const Trivia = model('Trivia', TriviaSchema);
+const Question = model('Question', QuestionSchema);
 
-module.exports = Trivia;
+module.exports = Question;

@@ -1,6 +1,6 @@
 const { Schema, model, Types } = require('mongoose');
 
-const ClassSchema = new Schema(
+const SubjectSchema = new Schema(
     {
         name: {
             type: String,
@@ -18,10 +18,10 @@ const ClassSchema = new Schema(
             type: String,
             required: true
         },
-        quizzes: [
+        questions: [
             {
                 type: Schema.Types.ObjectId,
-                ref: 'Trivia'
+                ref: 'Question'
             }
         ],
         year:[Number]
@@ -34,6 +34,6 @@ const ClassSchema = new Schema(
     }
 );
 
-const Class = model('Class', ClassSchema);
+const Subject = model('Subject', SubjectSchema);
 
-module.exports = Class;
+module.exports = Subject;

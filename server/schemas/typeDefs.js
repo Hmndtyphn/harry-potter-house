@@ -17,22 +17,21 @@ const typeDefs = gql`
         length: String
     }
 
-    type Trivia {
+    type Question {
         _id: ID
         question: String
         answerOptions: [String]
         isCorrect: String
-        subject: Class
         year: [Int]
     }
 
-    type Class {
+    type Subject {
         _id: ID
         name: String
         description: String
         professor: String
         image: String
-        quizzes: [Trivia]
+        questions: [Question]
         year: [Int]
     }
 
@@ -45,8 +44,9 @@ const typeDefs = gql`
         me: User
         users: [User]
         user(username: String!): User
-        trivia: [Trivia]
-        classes: [Class]
+        questions: [Question]
+        subjects: [Subject]
+        subject(name: String!): Subject
     }
 
     type Mutation {
