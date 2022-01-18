@@ -1,6 +1,7 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
 import { QUERY_CLASS } from "../utils/queries";
+import { capitalizeFirstLetter } from "../utils/helpers";
 import potionsImage from "../assets/images/potionsclass.jpeg";
 
 import { Link, useParams } from "react-router-dom";
@@ -22,7 +23,8 @@ const Classroom = () => {
 
   const styledDiv = {
     backgroundImage: `url(${potionsImage})`,
-    height: "100vh",
+    backgroundSize: 'cover',
+    height: '100vh',
     color: "white",
   };
 
@@ -34,9 +36,9 @@ const Classroom = () => {
     <div style={styledDiv}>
       <Container>
         <Typography variant="h3" sx={{ p:2 }} >
-          Welcome to {`${name}`} with Professor {`${professor}`} where you will
-          learn {`${description}`}. Take out your text and prepare to start your
-          quiz.
+          {`Welcome to ${capitalizeFirstLetter(name)} class taught by Professor ${professor} where you will
+          learn ${description}. Take out your text and prepare to start your
+          quiz.`}
         </Typography>
       </Container>
       <Container>
