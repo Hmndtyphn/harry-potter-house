@@ -1,1 +1,16 @@
+.navBar {
+    text-decoration: none;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+}
 
+.li {
+    text-decoration: none;
+    list-style-type: none;
+    color: white;
+    display: inline;
+    display: flex;
+    justify-content: space-between;
+    
+}
