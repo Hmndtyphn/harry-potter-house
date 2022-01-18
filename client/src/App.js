@@ -13,6 +13,7 @@ import { StoreProvider } from './utils/GlobalState';
 import Landing from './pages/Landing';
 import GreatHall from '../src/pages/GreatHall';
 import Classroom from '../src/pages/Classroom';
+import Quiz from '../src/components/Quiz';
 import House from './pages/House';
 
 import Auth from "./utils/auth";
@@ -57,7 +58,8 @@ function App() {
                 <Route exact path="/login" component={LoginPage} />
                 <Route exact path="/signup" component={SignUp} />
                 <Route exact path="/house" component={House} />
-                <Route exact path="/classroom/:name/:quiz?" component={Classroom} />
+                <Route exact path="/classroom/:name" component={Classroom} />
+                <Route exact path="/classroom/:name/:quiz" component={Quiz} />
                 <Route exact path="/greathall" component={GreatHall} />
                 <Route component={NoMatch} />
               </Switch>

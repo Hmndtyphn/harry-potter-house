@@ -5,14 +5,8 @@ import potionsImage from "../assets/images/potionsclass.jpeg";
 
 import { Link, useParams } from "react-router-dom";
 
-import { Button, Container } from "@mui/material";
+import { Button, Container, Typography } from "@mui/material";
 
-import Quiz from "../components/Quiz";
-import { render } from "@testing-library/react";
-
-// Where we take the quizzes
-// Import props from global state
-// Quiz total, points to add to house score
 
 const Classroom = () => {
   // grab name from params
@@ -25,9 +19,6 @@ const Classroom = () => {
 
   const subject = data?.subject || {};
   const { description, image, professor, questions } = subject;
-
-  console.log("classroom.js >> line 28 >> class data:", questions);
-
 
   const styledDiv = {
     backgroundImage: `url(${potionsImage})`,
@@ -42,9 +33,11 @@ const Classroom = () => {
   return (
     <div style={styledDiv}>
       <Container>
-        Welcome to {`${name}`} with Professor {`${professor}`} where you will
-        learn {`${description}`}. Take out your text and prepare to start your
-        quiz.
+        <Typography variant="h3" sx={{ p:2 }} >
+          Welcome to {`${name}`} with Professor {`${professor}`} where you will
+          learn {`${description}`}. Take out your text and prepare to start your
+          quiz.
+        </Typography>
       </Container>
       <Container>
         <Link to={`/classroom/${name}/quiz`}>
