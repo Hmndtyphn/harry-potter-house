@@ -108,7 +108,7 @@ export default function Nav() {
         if (Auth.loggedIn()) {
           return (
             <ul className="navBar">
-              <li> 
+              <li className="li"> 
            <AutoFixHighIcon/>
               </li>
               <li className="li"></li>
@@ -126,12 +126,12 @@ export default function Nav() {
   
   return (
     <Box sx={{ flexGrow: 1 }} >
-      <AppBar position="static" >
-        <Toolbar container style={{ background: 'black', boxShadow: 'none'}}>
+      <AppBar position="static" style= {{background: "black", opacity: .4 }}>
+        <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
            {showNav()}
           </Typography>
-          <Button color="inherit">Login</Button>
+          {/* <Button color="inherit" font="">Login</Button> */}
         </Toolbar>
       </AppBar>
     </Box>
