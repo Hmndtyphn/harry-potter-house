@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import { Container, Typography, Grid, Box } from "@mui/material";
+import { Container, Typography, Grid, Box, FormControl, FormControlLabel, RadioGroup, Radio } from "@mui/material";
 import Result from "../Result";
 import images from "../../assets/images/snape_2.jpeg";
 // import coverPhoto2 from "../../assets/";
@@ -44,11 +44,21 @@ const Quiz = () => {
     }
 
     console.log("Quiz >> index.js >> line 46 >> randomized questions:", quizQuestions)
+    // maybe add state to control form
     return (
       <Container>
         <Typography variant="h5" sx={{py: 5}}>
           {quizQuestions[currentQuestion].question}
         </Typography>
+        <FormControl component="fieldset">
+          <RadioGroup
+            aria-label="answers"
+            name="answer-buttons">
+              {quizQuestions[currentQuestion].answerOptions.map((answer) => (
+                <FormControlLabel value={`${answer}`} control={<Radio />} label={`${answer}`}/>
+              ))}
+            </RadioGroup>
+        </FormControl>
       </Container>
     )
 
