@@ -12,12 +12,13 @@ import images from "../../assets/images/snape_2.jpeg";
 // -- render Result component
 // Redirect to Great Hall when Quiz is complete
 
-const Quiz = () => {
-  const { subjectName } = useParams();
+const Quiz = ({ name, questions }) => {
+  console.log(questions, name)
+
   return (
     <Box sx={{ px: -100, pt: 0, pb: 15 }}>
-      <Typography className="title" variant="h1" component="h1" align="Center" sx={{ pt: 10 }} gutterBottom>
-       {subjectName}
+      <Typography class="title" variant="h1" component="h1" align="Center" sx={{ pt: 10 }} gutterBottom>
+       {name}
       </Typography>
 
       <Grid container sx={{ display: "flex", flexWrap: "wrap", justifyContent: "flex" }} alignItems="center">
@@ -31,8 +32,8 @@ const Quiz = () => {
 
 
         <Grid item xs={5}>
-          <Container className="background">
-          <Result />
+          <Container class="background">
+          {/* <Result /> */}
           </Container>
         </Grid>
       </Grid>

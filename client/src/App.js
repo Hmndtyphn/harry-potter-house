@@ -17,10 +17,12 @@ import House from './pages/House';
 
 import Auth from "./utils/auth";
 import Nav from './components/Nav';
+import SignUp from './components/SignUp';
+import LoginPage from './components/Login';
 import NoMatch from './pages/NoMatch';
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:3001/graphql',
+  uri: '/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -34,7 +36,7 @@ const authLink = setContext((_, { headers }) => {
 });
 
 const client = new ApolloClient({
-  link: httpLink,
+  link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
 
@@ -52,9 +54,12 @@ function App() {
               <Nav />
               <Switch>
                 <Route exact path="/" component={Landing} />
+                <Route exact path="/login" component={LoginPage} />
+                <Route exact path="/signup" component={SignUp} />
                 <Route exact path="/house" component={House} />
-                <Route exact path="/classroom/:name" component={Classroom} />
+                <Route exact path="/classroom/:name/:quiz?" component={Classroom} />
                 <Route exact path="/greathall" component={GreatHall} />
+                <Route component={NoMatch} />
               </Switch>
             </div>
 

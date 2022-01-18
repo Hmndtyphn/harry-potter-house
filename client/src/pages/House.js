@@ -1,15 +1,46 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { Link, useParams } from 'react-router-dom';
+import { Box, Container, Typography } from '@mui/material';
+import { useQuery } from "@apollo/client";
+
+import { useStoreContext } from "../utils/GlobalState";
+import { QUERY_ME } from "../utils/queries";
+import { UPDATE_HOUSE, UPDATE_WIZARD } from "../utils/actions";
+
 
 // .me query to get wand and house (which tells which house's common room  to display) and house points
 // From common room, link to Great Hall
 
 const CommonRoom = () => {
+  const [state, dispatch] = useStoreContext();
+
+  const { loading, data } = useQuery(QUERY_ME);
+
+  const { user, currentHouse } = state;
+
+  useEffect(() => {
+    dispatch({
+      type: UPDATE_WIZARD,
+      user: data.user
+    })
+  })
+
+  useEffect(() => {
+    dispatch({
+      type: UPDATE_HOUSE,
+      house: data.currentHouse
+    })
+  }, [state, data, currentHouse, dispatch])
 
   return (
-    <section>
-      Welcome to Ravenclaw!
-      <div>Or perhaps Slytherin...</div>
-    </section>
+
+    <Box>
+      <Container>
+        <h2>Welcome to Ravenclaw</h2>
+        <p>Or perhaps Slytherin...</p>
+        <Link to="/greathall">Visit the Great Hall</Link>
+      </Container>
+    </Box>
   )
 }
 
