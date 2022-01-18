@@ -6,7 +6,7 @@ import potionsImage from "../assets/images/potionsclass.jpeg";
 import { Link, useParams } from "react-router-dom";
 
 import { Button, Container, Typography } from "@mui/material";
-
+// words
 
 const Classroom = () => {
   // grab name from params
