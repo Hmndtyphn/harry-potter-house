@@ -3,6 +3,10 @@ import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { QUERY_CLASS } from "../utils/queries";
 import greatHallImage from "../assets/images/great_hall8.jpeg";
+import slytherin from "../assets/images/houseIcons/slytherin4.jpeg";
+import gryffindor from "../assets/images/houseIcons/gryffindor3.jpeg";
+import hufflepuff from "../assets/images/houseIcons/hufflepuff.jpeg";
+import ravenclaw from "../assets/images/houseIcons/ravenclaw2.jpeg";
 import { Grid, Typography, CardMedia, CardContent, CardActions, Card, Button } from "@mui/material";
 import Quiz from "../components/Quiz";
 
@@ -32,6 +36,22 @@ const GreatHall = () => {
     height: "100vh",
     color: "white",
   };
+  const SlytherinImage = {
+    backgroundImage: `url(${slytherin})`,
+    height: "100vh",
+  };
+  const GryffindorImage = {
+    backgroundImage: `url(${gryffindor})`,
+    height: "100vh", 
+  };
+  const HufflepuffImage = {
+    backgroundImage: `url(${hufflepuff})`,
+    height: "100vh", 
+  };
+  const RavenclawImage = {
+    backgroundImage: `url(${hufflepuff})`,
+    height: "100vh", 
+  };
 
 
 
@@ -44,7 +64,7 @@ const GreatHall = () => {
 
   
   return (
-    <Grid style={styledDiv}>
+    <div style={styledDiv}>
 
       {/* Gryffindor card */}
       <Grid sx={4}
@@ -52,15 +72,16 @@ const GreatHall = () => {
                     direction="row"
                     justify="flex-start"
                     alignItems="flex-start"
+                    rowSpacing={2}
                   >
       
-      <Card sx={{ pr: 5, pl: 5 }} padding={25} >
+      <Card sx={{ pr: 5, pl: 5 }} style={{backgroundColor: "red"}}>
       <CardMedia 
         component="img"
         height="140"
-        image=""
+        image={gryffindor}
       />
-      <CardContent>
+      <CardContent style={{backgroundColor: "yellow"}}>
         <Typography gutterBottom variant="h5" component="div">
           Gryffindor
         </Typography>
@@ -75,17 +96,17 @@ const GreatHall = () => {
     
 
     {/* Slytherin Card */}
-    <Card sx={{ pr: 5, pl: 5 }} padding={25}>
+    <Card sx={{ pr: 5, pl: 5 }} style={{backgroundColor: "green"}} >
       <CardMedia
         component="img"
         height="140"
-        image=""
+        image={slytherin}
       />
-      <CardContent>
+      <CardContent style={{backgroundColor: "grey"}}>
         <Typography gutterBottom variant="h5" component="div">
           Slytherin
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" color="black">
           Info about Slytherin House
         </Typography>
       </CardContent>
@@ -95,17 +116,17 @@ const GreatHall = () => {
     </Card>
 
     {/* Hufflepuff card */}
-    <Card sx={{ pr: 5, pl: 5 }}>
+    <Card sx={{ pr: 5, pl: 5 }} style={{backgroundColor: "yellow"}}>
       <CardMedia
         component="img"
         height="140"
-        image=""
+        image={hufflepuff}
       />
-      <CardContent>
+      <CardContent style={{backgroundColor: "black"}}>
         <Typography gutterBottom variant="h5" component="div">
           HufflePuff
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" color="black">
           info about Hufflepuff
         </Typography>
       </CardContent>
@@ -115,17 +136,17 @@ const GreatHall = () => {
     </Card>
 
     {/* Ravenclaw Card */}
-    <Card sx={{ pr: 5, pl: 5  }}>
+    <Card sx={{ pr: 5, pl: 5  }} style={{backgroundColor: "blue"}}>
       <CardMedia
         component="img"
         height="140"
-        image=""
+        image={ravenclaw}
       />
-      <CardContent>
+      <CardContent style={{backgroundColor: "yellow"}}>
         <Typography gutterBottom variant="h5" component="div" alignment="left">
           Ravenclaw
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" color="black">
           Info about Ravenclaw
         </Typography>
       </CardContent>
@@ -133,8 +154,8 @@ const GreatHall = () => {
         <Button size="small">Go to Ravenclaw House</Button>
       </CardActions>
     </Card>
-</Grid> 
-</Grid> 
+    </Grid> 
+</div> 
   );
 };
 
