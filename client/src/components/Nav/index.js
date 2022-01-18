@@ -100,12 +100,18 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { Menu, MenuItem } from "@mui/material";
+import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
+
 
 export default function Nav() {
   function showNav() {
         if (Auth.loggedIn()) {
           return (
             <ul className="navBar">
+              <li> 
+           <AutoFixHighIcon/>
+              </li>
+              <li className="li"></li>
               <li className="li" flexRow="row">
                 <Link style={{ textDecoration: "none", color:"White"}} to="/greathall">Great Hall</Link>
               </li>
@@ -122,7 +128,6 @@ export default function Nav() {
     <Box sx={{ flexGrow: 1 }} >
       <AppBar position="static" >
         <Toolbar container style={{ background: 'black', boxShadow: 'none'}}>
-
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
            {showNav()}
           </Typography>
