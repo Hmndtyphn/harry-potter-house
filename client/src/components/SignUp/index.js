@@ -8,20 +8,28 @@ import { SIGNUP_USER } from "../../utils/mutations";
 
 const SignUp = (props) => {
 
-  const [formState, setFormState] = useState({ username: '', email: '', password: ''});
-  const [addUser, { error }] = useMutation(SIGNUP_USER);
+  const [formState, setFormState] = useState({ username: '', email: '', password: '' });
+  const [addUser] = useMutation(SIGNUP_USER);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-      const mutationResponse = await addUser({
-        variables: { 
-          username: formState.username,
-          email: formState.email,
-          password: formState.password
-        }
-      });
-      const token = mutationResponse.data.addUser.token;
-      Auth.login(token)
+    const mutationResponse = await addUser({
+      variables: {
+        username: formState.username,
+        email: formState.email,
+        password: formState.password
+      }
+    });
+    const token = mutationResponse.data.addUser.token;
+    Auth.login(token)
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
   };
 
   return (
@@ -30,13 +38,28 @@ const SignUp = (props) => {
         <Link to="/login">← Go to Login</Link>
         <h2>Sign Up</h2>
         <form onSubmit={handleFormSubmit}>
-        <Input placeholder="Wizarding Name">
-        </Input>
-        <Input placeholder="Email Address">
-        </Input>
-        <Input placeholder="Password">
-        </Input>
-        <Button type='submit'>Submit</Button>
+          <Input
+            placeholder="Wizarding Name"
+            name="username"
+            type="username"
+            id="username"
+            onChange={handleChange}
+            />
+          <Input
+            placeholder="Email Address"
+            name="email"
+            type="email"
+            id="email"
+            onChange={handleChange}
+          />
+          <Input 
+          placeholder="Password"
+          name="password"
+          type="password"
+          id="pwd"
+          onChange={handleChange}
+          />
+          <Button type='submit'>Submit</Button>
         </form>
       </Container>
     </Box>

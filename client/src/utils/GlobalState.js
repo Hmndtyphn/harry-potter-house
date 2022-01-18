@@ -6,11 +6,12 @@ const { Provider } = StoreContext;
 
 const StoreProvider = ({ value = [], ...props }) => {
   const [state, dispatch] = useWizardReducer({
+    wizard: '',
     houses: [],
     currentHouse: '',
     subjects: [],
     currentSubject: '',
-    wand: {}
+    questions: []
   });
   console.log(state);
   return <Provider value={[state, dispatch]} {...props} />;

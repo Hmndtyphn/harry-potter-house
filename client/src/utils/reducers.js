@@ -1,7 +1,8 @@
 import { useReducer } from "react";
 import {
   UPDATE_HOUSE,
-  UPDATE_SUBJECTS
+  UPDATE_SUBJECTS,
+  UPDATE_WIZARD
 } from './actions';
 
 export const reducer = (state, action) => {
@@ -15,8 +16,14 @@ export const reducer = (state, action) => {
     case UPDATE_HOUSE:
       return {
         ...state,
-        wand: [...action.wand]
-      }
+        currentHouse: [...action.currentHouse]
+      };
+
+      case UPDATE_WIZARD:
+        return {
+          ...state,
+          wizard: [...action.wizard]
+        }
 
     default:
       return state;

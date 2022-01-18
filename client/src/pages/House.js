@@ -5,26 +5,32 @@ import { useQuery } from "@apollo/client";
 
 import { useStoreContext } from "../utils/GlobalState";
 import { QUERY_ME } from "../utils/queries";
-import { UPDATE_HOUSE } from "../utils/actions";
+import { UPDATE_HOUSE, UPDATE_WIZARD } from "../utils/actions";
 
 
 // .me query to get wand and house (which tells which house's common room  to display) and house points
 // From common room, link to Great Hall
 
 const CommonRoom = () => {
-  // const [state, dispatch] = useStoreContext();
+  const [state, dispatch] = useStoreContext();
 
-  // const { user, currentHouse } = state;
+  const { user, currentHouse } = state;
 
-  // const { loading, data } = useQuery(QUERY_ME);
+  const { loading, data } = useQuery(QUERY_ME);
+  
+  useEffect(() => {
+    dispatch({
+      type: UPDATE_WIZARD,
+      wizard: data.user
+    })
+  })
 
-
-  // useEffect(() => {
-  //   dispatch({
-  //     type: UPDATE_HOUSE,
-  //     house: currentHouse
-  //   })
-  // }, [state, data])
+  useEffect(() => {
+    dispatch({
+      type: UPDATE_HOUSE,
+      house: currentHouse
+    })
+  }, [state, data, currentHouse, dispatch])
 
   return (
 
