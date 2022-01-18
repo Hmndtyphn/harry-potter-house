@@ -126,7 +126,7 @@ export default function Nav() {
   
   return (
     <Box sx={{ flexGrow: 1 }} >
-      <AppBar position="static" style= {{background: "black", opacity: .4 }}>
+      <AppBar position="static" style= {{background: "	#e3a000"}}>
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
            {showNav()}
