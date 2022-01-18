@@ -72,7 +72,6 @@ const Quiz = () => {
     // maybe add state to control form
     return (
       <Container>
-        
         <Typography variant="h5" sx={{py: 5}}>
           {quizQuestions[currentQuestion].question}
         </Typography>
