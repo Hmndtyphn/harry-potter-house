@@ -2,6 +2,8 @@ import React from "react";
 import { Button, Container } from '@mui/material';
 import { Link } from "react-router-dom";
 import { useQuery } from "@apollo/client";
+import { useStoreContext } from "../utils/GlobalState";
+
 
 
 // in Great Hall, link to House
@@ -12,6 +14,7 @@ import { useQuery } from "@apollo/client";
 
 
 const GreatHall = () => {
+  const [state, dispatch] = useStoreContext();  
   return (
     <div>
       <p>Good Morning Everyone!</p>

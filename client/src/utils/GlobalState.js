@@ -8,7 +8,7 @@ const StoreProvider = ({ value = [], ...props }) => {
   const [state, dispatch] = useWizardReducer({
     // Add to state: questions answered, user answers
     // after login, wizard changes to name of logged in user
-    wizard: '',
+    me: {},
 
     houses: [],
     // currentHouse attached to QUERY_ME

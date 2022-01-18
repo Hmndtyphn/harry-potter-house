@@ -1,13 +1,24 @@
 import { UPDATE_HOUSE,
-UPDATE_SUBJECTS} from '../utils/actions';
+UPDATE_SUBJECTS,
+UPDATE_WIZARD} from '../utils/actions';
+import { reducer } from '../utils/reducers';
 
 const initialState = {
-  wand: {},
-  house: 'Gryffindor',
+  me: {},
+  houses: [], 
+  currentHouse: 'Hufflepuff'
 };
 
-test('UPDATE_HOUSE', () => {
+test('UPDATE_WIZARD', () => {
   let newState = reducer(initialState, {
-    type: UPDATE_HOUSE,
-  })
+    type: UPDATE_WIZARD,
+    me: {
+      username: 'Sally Potter',
+      house: []
+    }
+  });
+
+  expect(newState.me.username).toBe("Sally Potter");
+  expect(initialState.me.username).toBe('');
+
 })
