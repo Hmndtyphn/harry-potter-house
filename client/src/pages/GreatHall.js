@@ -2,8 +2,8 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { QUERY_CLASS } from "../utils/queries";
-import greatHallImage from "../assets/images/great_hall3.jpeg";
-import { Container, Typography } from "@mui/material";
+import greatHallImage from "../assets/images/great_hall8.jpeg";
+import { Grid, Typography, CardMedia, CardContent, CardActions, Card, Button } from "@mui/material";
 import Quiz from "../components/Quiz";
 
 
@@ -33,18 +33,108 @@ const GreatHall = () => {
     color: "white",
   };
 
+
+
+  
+
+
   if (loading) {
     return <div>Loading...</div>;
   }
 
+  
   return (
-    <div style={styledDiv}>
-      <Container>
-        <Typography variant="h3" alignment="center" sx={{ p:2 }} >
-          /*/* Welcome to the Great Hall *\*\
+    <Grid style={styledDiv}>
+
+      {/* Gryffindor card */}
+      <Grid sx={4}
+                    container
+                    direction="row"
+                    justify="flex-start"
+                    alignItems="flex-start"
+                  >
+      
+      <Card sx={{ pr: 5, pl: 5 }} padding={25} >
+      <CardMedia 
+        component="img"
+        height="140"
+        image=""
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          Gryffindor
         </Typography>
-      </Container>
-    </div>
+        <Typography variant="body2" color="text.secondary">
+          Words about Gryffindor House
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small">Go to Gryffindor House</Button>
+      </CardActions>
+    </Card>
+    
+
+    {/* Slytherin Card */}
+    <Card sx={{ pr: 5, pl: 5 }} padding={25}>
+      <CardMedia
+        component="img"
+        height="140"
+        image=""
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          Slytherin
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          Info about Slytherin House
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small">Go to Slytherin House</Button>
+      </CardActions>
+    </Card>
+
+    {/* Hufflepuff card */}
+    <Card sx={{ pr: 5, pl: 5 }}>
+      <CardMedia
+        component="img"
+        height="140"
+        image=""
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          HufflePuff
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          info about Hufflepuff
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small">Go to Hufflepuff House</Button>
+      </CardActions>
+    </Card>
+
+    {/* Ravenclaw Card */}
+    <Card sx={{ pr: 5, pl: 5  }}>
+      <CardMedia
+        component="img"
+        height="140"
+        image=""
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div" alignment="left">
+          Ravenclaw
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          Info about Ravenclaw
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small">Go to Ravenclaw House</Button>
+      </CardActions>
+    </Card>
+</Grid> 
+</Grid> 
   );
 };
 
