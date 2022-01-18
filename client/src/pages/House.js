@@ -14,21 +14,21 @@ import { UPDATE_HOUSE, UPDATE_WIZARD } from "../utils/actions";
 const CommonRoom = () => {
   const [state, dispatch] = useStoreContext();
 
+  const { loading, data } = useQuery(QUERY_ME);
+
   const { user, currentHouse } = state;
 
-  const { loading, data } = useQuery(QUERY_ME);
-  
   useEffect(() => {
     dispatch({
       type: UPDATE_WIZARD,
-      wizard: data.user
+      user: data.user
     })
   })
 
   useEffect(() => {
     dispatch({
       type: UPDATE_HOUSE,
-      house: currentHouse
+      house: data.currentHouse
     })
   }, [state, data, currentHouse, dispatch])
 
