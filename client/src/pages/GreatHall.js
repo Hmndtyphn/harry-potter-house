@@ -64,24 +64,26 @@ const GreatHall = () => {
 
   
   return (
-    <div style={styledDiv}>
+    <div style={styledDiv} >
 
       {/* Gryffindor card */}
-      <Grid sx={4}
+      <Grid sx={{ pr: 5, pl: 10 }}
                     container
+                    sx={{ pr: 5, pl: 10 }}
+                    sx={{ pt: 25, pb: 25 }}
                     direction="row"
                     justify="flex-start"
                     alignItems="flex-start"
-                    rowSpacing={2}
+                    rowSpacing={10}
                   >
       
-      <Card sx={{ pr: 5, pl: 5 }} style={{backgroundColor: "red"}}>
+      <Card sx={{ pr: 5, pl: 5 }} style={{backgroundColor: "maroon"}}>
       <CardMedia 
         component="img"
         height="140"
         image={gryffindor}
       />
-      <CardContent style={{backgroundColor: "yellow"}}>
+      <CardContent style={{backgroundColor: "gold"}}>
         <Typography gutterBottom variant="h5" component="div">
           Gryffindor
         </Typography>
@@ -96,17 +98,17 @@ const GreatHall = () => {
     
 
     {/* Slytherin Card */}
-    <Card sx={{ pr: 5, pl: 5 }} style={{backgroundColor: "green"}} >
+    <Card sx={{ pr: 5, pl: 5 }} style={{backgroundColor: "green"}}  >
       <CardMedia
         component="img"
         height="140"
         image={slytherin}
       />
-      <CardContent style={{backgroundColor: "grey"}}>
+      <CardContent style={{backgroundColor: "silver"}}>
         <Typography gutterBottom variant="h5" component="div">
           Slytherin
         </Typography>
-        <Typography variant="body2" color="black">
+        <Typography variant="body2" color="white">
           Info about Slytherin House
         </Typography>
       </CardContent>
@@ -116,17 +118,17 @@ const GreatHall = () => {
     </Card>
 
     {/* Hufflepuff card */}
-    <Card sx={{ pr: 5, pl: 5 }} style={{backgroundColor: "yellow"}}>
+    <Card sx={{ pr: 5, pl: 5 }} style={{backgroundColor: "black"}}>
       <CardMedia
         component="img"
         height="140"
         image={hufflepuff}
       />
-      <CardContent style={{backgroundColor: "black"}}>
+      <CardContent style={{backgroundColor: "yellow"}}>
         <Typography gutterBottom variant="h5" component="div">
           HufflePuff
         </Typography>
-        <Typography variant="body2" color="black">
+        <Typography variant="body2" color="white">
           info about Hufflepuff
         </Typography>
       </CardContent>
@@ -136,17 +138,17 @@ const GreatHall = () => {
     </Card>
 
     {/* Ravenclaw Card */}
-    <Card sx={{ pr: 5, pl: 5  }} style={{backgroundColor: "blue"}}>
+    <Card sx={{ pr: 5, pl: 5  }} style={{backgroundColor: "gold"}}>
       <CardMedia
         component="img"
         height="140"
         image={ravenclaw}
       />
-      <CardContent style={{backgroundColor: "yellow"}}>
+      <CardContent style={{backgroundColor: "mediumBlue"}}>
         <Typography gutterBottom variant="h5" component="div" alignment="left">
           Ravenclaw
         </Typography>
-        <Typography variant="body2" color="black">
+        <Typography variant="body2" color="white">
           Info about Ravenclaw
         </Typography>
       </CardContent>
