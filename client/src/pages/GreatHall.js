@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { QUERY_CLASS } from "../utils/queries";
-import greatHallImage from "../assets/images/great_hall8.jpeg";
+import greatHallImage from "../assets/images/great_hall.png";
 import slytherin from "../assets/images/houseIcons/slytherin4.jpeg";
 import gryffindor from "../assets/images/houseIcons/gryffindor3.jpeg";
 import hufflepuff from "../assets/images/houseIcons/hufflepuff.jpeg";
@@ -33,7 +33,9 @@ const GreatHall = () => {
 
   const styledDiv = {
     backgroundImage: `url(${greatHallImage})`,
+    backgroundSize: "cover",
     height: "100vh",
+    width: "100%",
     color: "white",
   };
   const SlytherinImage = {
@@ -75,10 +77,11 @@ const GreatHall = () => {
                     sx={{ pr: 10, pl: 10 }}
                     sx={{ pt: 25, pb: 25 }}
                     direction="row"
-                    justify="flex-start"
+                    justifyContent="space-around"
                     alignItems="flex-start"
                     rowSpacing={20}
                     flew-row="center"
+
                   >
       
       <Card sx={{ pr: 5, pl: 5 }} style={{backgroundColor: "maroon"}}>
@@ -142,7 +145,7 @@ const GreatHall = () => {
     </Card>
 
     {/* Ravenclaw Card */}
-    <Card sx={{ pr: 5, pl: 5  }} style={{backgroundColor: "gold"}}>
+    <Card sx={{ pr: 5, pl: 5  }} style={{backgroundColor: "silver"}}>
       <CardMedia
         component="img"
         height="220"
