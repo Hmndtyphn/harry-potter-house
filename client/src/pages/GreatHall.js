@@ -1,29 +1,48 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { useStoreContext } from "../utils/GlobalState";
-import { QUERY_CLASS } from "../utils/queries";
 import greatHallImage from "../assets/images/great_hall.png";
 import slytherin from "../assets/images/houseIcons/slytherin4.jpeg";
 import gryffindor from "../assets/images/houseIcons/gryffindor3.jpeg";
 import hufflepuff from "../assets/images/houseIcons/hufflepuff.jpeg";
 import ravenclaw from "../assets/images/houseIcons/ravenclaw2.jpeg";
 import { Grid, Typography, CardMedia, CardContent, CardActions, Card, Button } from "@mui/material";
+
 import door from "../assets/images/houseIcons/door.jpeg";
+
+
+
+
+import door from "../assets/images/houseIcons/door.jpeg";
+
+
+// Conflict resolving
+
+// in Great Hall, link to House
+// Will display all house points, pull props from Global State
+// Map out classes to display Cards/Doors that link to classrooms
+// Logout Link, need to build still
+// Style with @material/mui
+
 
 
 const GreatHall = () => {
   const [state, dispatch] = useStoreContext();  
-  // grab name from params
-  const { name } = useParams();
+ 
+  // const { data: houseData } = useQuery(QUERY_HOUSES);
 
-  // use useQuery(Apollo) to make query request
-  const { loading, data } = useQuery(QUERY_CLASS, {
-    variables: { name },
-  });
+  const { me, houses } = state;
+  console.log(houses);
 
-  const subject = data?.subject || {};
-  const { description, image, professor, questions } = subject;
+  // useEffect(() => {
+  //   if (data) {
+  //     dispatch({
+  //       type: UPDATE_HOUSE_SCORE,
+
+  //     }, [data, dispatch])
+  //   }
+  // })
 
   const styledDiv = {
     backgroundImage: `url(${greatHallImage})`,
@@ -35,21 +54,14 @@ const GreatHall = () => {
     alignItems:"flex-start",
   };
   
+  // if (loading) {
+  //   return <div>Loading...</div>;
+  // }
 
-
-
-  
-
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  
   return (
     <div style={styledDiv}  >
       <Typography align="center" variant="h2" gutterBottom>
-          Welcome to the Great Hall!
+          Welcome, {me.username}, to the Great Hall!
         </Typography>
 
       {/* Gryffindor card */}
