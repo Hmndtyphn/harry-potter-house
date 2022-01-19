@@ -16,9 +16,13 @@ const CommonRoom = (props) => {
 
   const { data: userData } = useQuery(QUERY_ME);
   console.log(userData);
-  const { me, houses } = state;
-  console.log(me);
-
+  const { me, house, wand } = state;
+  const wizard = me.username;
+  const currentHouse = me.house;
+  const myWand = me.wand;
+  console.log(wizard);
+  console.log(currentHouse);
+  console.log(myWand);
 
   useEffect(() => {
     if (userData) {
@@ -32,15 +36,15 @@ const CommonRoom = (props) => {
   // useEffect(() => {
   //   dispatch({
   //     type: UPDATE_CURRENT_HOUSE,
-  //     house: data.currentHouse
+  //     house: userData.currentHouse
   //   })
-  // }, [state, wizardData, currentHouse, dispatch])
+  // }, [currentHouse, dispatch])
 
   return (
 
     <Box>
       <Container>
-        <h2>Welcome to Ravenclaw</h2>
+        <h2>Welcome, {wizard}, to {currentHouse}</h2>
         <p>Or perhaps Slytherin...</p>
         <Link to="/greathall">Visit the Great Hall</Link>
       </Container>

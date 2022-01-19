@@ -21,11 +21,11 @@ export const reducer = (state, action) => {
         subjects: [...action.subjects]
       };
 
-    case UPDATE_CURRENT_HOUSE:
-      return {
-        ...state,
-        currentHouse: [...action.currentHouse]
-      };
+    // case UPDATE_CURRENT_HOUSE:
+    //   return {
+    //     ...state,
+    //     currentHouse: {...action.currentHouse}
+    //   };
 
     case UPDATE_HOUSES:
       return {
