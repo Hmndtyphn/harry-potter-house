@@ -1,18 +1,19 @@
-.navigation {
-    background-color: #b2c5f460;
+.navBar {
+    display: flex;
 }
 
-.nav-tabs {
-    font-family: "Permanent";
-    font-weight: bolder;
-    font-size: 18px;
-    color: black;
+ul {
+    display: flex;
+    align-items: stretch; /* Default */
+    justify-content: space-between;
+    width: 100%;
+    background: #e3a000;
+    margin: 0;
+    padding: 0;
 }
-
-.css-1s94p7r-MuiButtonBase-root-MuiTab-root.Mui-selected {
-    color: #000000;
-}
-
-.css-1aquho2-MuiTabs-indicator {
-    background-color: #0060faad;
+li {
+    display: block;
+    flex: 0 1 auto; /* Default */
+    list-style-type: none;
+    background: #e3a000;
 }

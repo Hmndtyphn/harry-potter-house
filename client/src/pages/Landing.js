@@ -1,17 +1,28 @@
 import React from 'react';
-import { Button, Container } from '@mui/material';
+import { Button, Container, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
+import hogwartsCastle from "../assets/images/hogwarts_castle.jpeg";
 
 
 const Landing = () => {
 
+  const styledDiv = {
+    backgroundImage: `url(${hogwartsCastle})`,
+    backgroundSize: "cover",
+    height: "100vh",
+    width: "100%",
+    color: "white",
+    justifyContent: "center",
+    alignItems:"flex-start",
+  };
+
   return (
-    <div>
-      <Container>
+    <div style={styledDiv}>
+      <Typography>
         <h1>Welcome to Hogwarts!</h1>
-        <Container>
+        <Typography>
           <p>The messrs. Prongs, Padfoot, Wormtail, and Moony welcome you to Potter's Marauders</p>
-        </Container>
+        </Typography>
         <h2>Already a wizarding student?</h2>
         <Link to="/login">
           <Button variant='contained'>Login</Button>
@@ -20,7 +31,7 @@ const Landing = () => {
         <Link to="/signup">
           <Button variant='contained'>Enroll</Button>
         </Link>
-      </Container>
+      </Typography>
     </div>
   )
 };

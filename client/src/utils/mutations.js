@@ -19,7 +19,7 @@ export const SIGNUP_USER = gql`
     }
  }
 `;
-
+// words
 export const LOGIN = gql`
   mutation login($email: String!, $password: String!) {
     login(email: $email, password: $password) {

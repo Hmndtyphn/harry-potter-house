@@ -4,9 +4,20 @@ import { Link } from "react-router-dom";
 import Auth from "../../utils/auth";
 import { useMutation } from "@apollo/client";
 import { SIGNUP_USER } from "../../utils/mutations";
+import hogwartsCastle from "../../assets/images/hogwarts_castle.jpeg";
 
 
 const SignUp = (props) => {
+
+  const styledDiv = {
+    backgroundImage: `url(${hogwartsCastle})`,
+    backgroundSize: "cover",
+    height: "100vh",
+    width: "100%",
+    color: "white",
+    justifyContent: "center",
+    alignItems:"flex-start",
+  };
 
   const [formState, setFormState] = useState({ username: '', email: '', password: '' });
   const [addUser] = useMutation(SIGNUP_USER);
@@ -33,7 +44,8 @@ const SignUp = (props) => {
   };
 
   return (
-    <Box>
+    <div>
+    <Box style={styledDiv}>
       <Container>
         <Link to="/login">← Go to Login</Link>
         <h2>Sign Up</h2>
@@ -63,6 +75,7 @@ const SignUp = (props) => {
         </form>
       </Container>
     </Box>
+    </div>
   )
 }
 
