@@ -6,12 +6,23 @@ import { useQuery } from "@apollo/client";
 import { useStoreContext } from "../utils/GlobalState";
 import { QUERY_ME } from "../utils/queries";
 import { UPDATE_CURRENT_HOUSE, UPDATE_WIZARD } from "../utils/actions";
-
-
+import greatHallImage from "../assets/images/common_room2.jpeg";
+// 
 // .me query to get wand and house (which tells which house's common room  to display) and house points
 // From common room, link to Great Hall
 
 const CommonRoom = (props) => {
+
+  const styledDiv = {
+    backgroundImage: `url(${greatHallImage})`,
+    backgroundSize: "cover",
+    height: "100vh",
+    width: "100%",
+    color: "white",
+    justifyContent: "center",
+    alignItems:"flex-start",
+  };
+
   const [state, dispatch] = useStoreContext();
 
   const { data: userData } = useQuery(QUERY_ME);
@@ -41,14 +52,18 @@ const CommonRoom = (props) => {
   // }, [currentHouse, dispatch])
 
   return (
-
+    <div style={styledDiv}>
     <Box>
       <Container>
+        <Typography>
         <h2>Welcome, {wizard}, to {currentHouse}</h2>
         <p>Or perhaps Slytherin...</p>
-        <Link to="/greathall">Visit the Great Hall</Link>
+        <Link style={{ color:"white"}}
+        to="/greathall">Visit the Great Hall</Link>
+        </Typography>
       </Container>
     </Box>
+    </div>
   )
 }
 
