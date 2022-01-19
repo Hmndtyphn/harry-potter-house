@@ -18,7 +18,7 @@ const Landing = () => {
 
   return (
     <div style={styledDiv}>
-      <Container>
+      <Container backgroundColor="light-grey">
         <Typography>
           <h1>Welcome to Hogwarts!</h1>
           <Typography>
