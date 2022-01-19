@@ -23,13 +23,10 @@ import Quiz from "../components/Quiz";
 
 
 const GreatHall = () => {
-  const [state, dispatch] = useStoreContext();  
   // grab name from params
-  const { name } = useParams();
 
   // use useQuery(Apollo) to make query request
   const { loading, data } = useQuery(QUERY_CLASS, {
-    variables: { name },
   });
 
   const subject = data?.subject || {};
