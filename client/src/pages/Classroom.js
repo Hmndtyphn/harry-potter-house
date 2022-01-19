@@ -23,6 +23,7 @@ const Classroom = () => {
   console.log(subject);
 
   const styledDiv = {
+    
     backgroundSize: 'cover',
     height: '100vh',
     color: "black",
