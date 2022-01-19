@@ -5,31 +5,17 @@ import {
   Typography,
   Grid,
   Box,
-  FormControl,
-  FormControlLabel,
-  RadioGroup,
-  Radio,
   Card,
-  CardActions,
-  CardContent,
+  CardHeader,
+  CardContent
 } from "@mui/material";
+import QuestionCard from "../QuestionCard";
 import { styled } from "@mui/material/styles";
-import Result from "../Result";
 import images from "../../assets/images/snape_4.jpeg";
-// import coverPhoto2 from "../../assets/";
 import { useQuery } from "@apollo/client";
 import { capitalizeFirstLetter } from "../../utils/helpers";
 import { QUERY_CLASS } from "../../utils/queries";
 import potionsImage from "../../assets/images/potionsclass.jpeg";
-
-// Background pic of class
-// Start button to start quiz/Link to Quiz component/
-// --render Quiz component
-// Take Quiz, get results and summary
-// -- render Result component
-// Redirect to Great Hall when Quiz is complete
-// const userAnswers = [];
-// const correctAnswers = [];
 
 const Quiz = () => {
   const { name } = useParams();
@@ -37,83 +23,32 @@ const Quiz = () => {
   const { loading, data } = useQuery(QUERY_CLASS, {
     variables: { name },
   });
-   
 
-
-  // const subject = data?.subject || {};
-  // const { questions, image, professor } = subject;
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [questions, setQuestions] = useState(null);
   const [endQuiz, setEndQuiz] = useState(false);
 
-  useEffect(async() => {
+  useEffect(() => {
     if (data && data.subject && !questions) {
-      // const useQuestions = await fiveQuestions(data.subject.questions)
 
-      let sliced = data.subject.questions.slice(0,4)
-      setQuestions(sliced)
-      console.log(questions)
+      let sliced = data.subject.questions.slice(0, 4);
+      setQuestions(sliced);
     }
-  }, [data, questions, setQuestions])
+  }, [data, questions, setQuestions]);
 
   useEffect(() => {
     if (currentQuestion === 4) {
-      setEndQuiz(true)
+      setEndQuiz(true);
     }
   }, [currentQuestion, endQuiz]);
 
-  // set next question
-  function handleChange(event) {
-    event.preventDefault();
-
-    const answer = questions[currentQuestion].isCorrect
-    if (answer === event.target.value) {
-      setScore(score + 2)
-    } else {
-      setScore(score - 1)
-    }
-    // set next question
-    setCurrentQuestion(currentQuestion + 1);
-    console.log(score);
-    // console.log(userAnswers);
-  }
-
-  const questionCard = (
-    <Card variant="outlined">
-      <CardContent>
-        {questions && questions[currentQuestion] && questions[currentQuestion].question ? <Typography variant="h5" sx={{ py: 3 }}>
-          {questions[currentQuestion].question}
-        </Typography> : <div>Loading</div>}
-      </CardContent>
-      <CardActions>
-        <FormControl>
-          {questions && questions[currentQuestion] && questions[currentQuestion].question ? <RadioGroup
-            aria-label="answers"
-            name="answer-buttons"
-            value={currentQuestion}
-            sx={{ pb: 3, pl: 2 }}
-            onChange={handleChange}
-          >
-            {questions[currentQuestion].answerOptions.map((answer) => (
-              <FormControlLabel
-                key={`${answer}`}
-                value={`${answer}`}
-                control={<Radio />}
-                label={`${answer}`}
-              />
-            ))}
-          </RadioGroup> : <div>Loading</div>}
-        </FormControl>
-      </CardActions>
-    </Card>
-  );
 
   const BackgroundDiv = styled(Box)(({ theme }) => ({
     backgroundImage: `url(${potionsImage})`,
     backgroundSize: "cover",
     height: "100vh",
-    color: 'white'
+    color: "white",
   }));
 
   if (loading) {
@@ -149,9 +84,39 @@ const Quiz = () => {
           </Container>
         </Grid>
 
-        {!endQuiz ? <Grid item xs={6} align="center">
-          {questions ? <Container className="background">{questionCard}</Container> : <div>Loading</div>}
-        </Grid> : <Grid item xs={6} align="center">{`Here is your score for the quiz: ${score}`}</Grid>}
+        {!endQuiz ? (
+          <Grid item xs={6} align="center">
+            {questions &&
+            questions[currentQuestion] &&
+            questions[currentQuestion].question ? (
+              <Container className="background">
+                <QuestionCard
+                  questions={questions}
+                  score={score}
+                  setScore={setScore}
+                  currentQuestion={currentQuestion}
+                  setCurrentQuestion={setCurrentQuestion}
+                />
+              </Container>
+            ) : (
+              <div>Loading</div>
+            )}
+          </Grid>
+        ) : (
+          <Grid
+            item
+            xs={6}
+            align="center"
+            sx={{ pr: 15 }}>
+              <Card variant="outlined" sx={{ py: 10 }}>
+                <CardContent>
+
+                    <Typography variant='h5'>Here are the points you've<br /> earned or lost your house: <br />{`${score}`}</Typography>
+                  
+                </CardContent>
+              </Card>
+          </Grid>
+        )}
       </Grid>
     </BackgroundDiv>
   );
