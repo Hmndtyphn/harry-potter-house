@@ -620,7 +620,8 @@ db.once('open', async () => {
             name: 'transfiguration',
             description: 'ipsum lorem',
             professor: 'Minerva McGonagall',
-            image: 'professor_mcgonagall',
+            profImg: 'minerva_mcgonagall',
+            classImg: 'transfiguration_class',
             questions: [questions[0], questions[1], questions[2], questions[3], questions[4], questions[5], questions[6], questions[7], questions[8], questions[9], questions[10], questions[11], questions[12], questions[13], questions[14]],
             year: [1, 2, 3]
         },
@@ -628,7 +629,8 @@ db.once('open', async () => {
             name: 'potions',
             description: 'ipsim lorem',
             professor: 'Severus Snape',
-            image: 'professor_snape',
+            profImg: 'severus_snape',
+            classImg: 'potions_class',
             questions: [questions[30], questions[31], questions[32], questions[33], questions[34], questions[35], questions[36], questions[37], questions[38], questions[39], questions[40], questions[41], questions[42], questions[43], questions[44], questions[45]],
             year: [1, 2, 3]
         },
@@ -636,7 +638,8 @@ db.once('open', async () => {
             name: 'charms',
             description: 'ipsim lorem',
             professor: 'Filius Flitwick',
-            image: 'professor_flitwick',
+            profImg: 'filius_flitwick',
+            classImg: 'charms_class',
             questions: [questions[46], questions[47], questions[48], questions[49], questions[50], questions[51], questions[52], questions[53], questions[54], questions[55], questions[56], questions[57], questions[58], questions[59], questions[60], questions[61]],
             year: [1, 2, 3]
         },
@@ -644,7 +647,8 @@ db.once('open', async () => {
             name: 'historyofmagic',
             description: 'ipsim lorem',
             professor: 'Cuthbert Binns',
-            image: 'professor_binns',
+            profImg: 'cuthbert_binns',
+            classImg: 'historyofmagic_class',
             questions: [questions[62], questions[63], questions[64], questions[65], questions[66], questions[67], questions[68], questions[69], questions[70], questions[71], questions[72], questions[73], questions[74], questions[75], questions[76]],
             year: [1, 2, 3]
         },
@@ -652,7 +656,8 @@ db.once('open', async () => {
             name: 'darkarts',
             description: 'ipsum lorem',
             professor: 'Quirinus Quirrell',
-            image: 'professor_quirrell',
+            profImg: 'quirinus_quirrell',
+            classImg: 'darkarts_class',
             questions: [questions[15], questions[16], questions[17], questions[18], questions[19], questions[20], questions[21], questions[22], questions[23], questions[24], questions[25], questions[26], questions[27], questions[28], questions[29]],
             year: [1, 2, 3]
         },
@@ -660,7 +665,8 @@ db.once('open', async () => {
             name: 'sorting',
             description: 'ipsim lorem',
             professor: 'Sorting Hat',
-            image: 'great_hall_sorting',
+            profImg: 'sortinghat',
+            classImg: 'greathall_sorting',
             questions: [questions[77], questions[78], questions[79], questions[80], questions[81], questions[82], questions[83], questions[84], questions[85], questions[86], questions[87]],
             year: [1]
         }

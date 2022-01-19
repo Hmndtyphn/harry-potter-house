@@ -19,10 +19,10 @@ const Classroom = () => {
   });
 
   const subject = data?.subject || {};
-  const { description, image, professor, questions } = subject;
+  const { description, classImg, profImg, professor, questions } = subject;
 
   const styledDiv = {
-    backgroundImage: `url(${potionsImage})`,
+    backgroundImage: `url(https://res.cloudinary.com/dceprxjzq/image/upload/v1642627920/MaraudersTrivia/${classImg}.jpg)`,
     backgroundSize: 'cover',
     height: '100vh',
     color: "white",
