@@ -91,7 +91,7 @@ const GreatHall = () => {
       </CardContent>
       <CardActions>
         <Button size="small">
-        <Link style={{ color:"black"}} to="/house">Go to Gryffindor House</Link>
+        <Link style={{ color:"white"}} to="/house">Go to Gryffindor House</Link>
         </Button>
       </CardActions>
     </Card>
@@ -113,8 +113,8 @@ const GreatHall = () => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Go to Slytherin House
-        
+        <Button size="small">
+        <Link style={{ color:"white"}} to="/house">Go to Slytherin House</Link>
         </Button>
       </CardActions>
     </Card>
@@ -135,7 +135,9 @@ const GreatHall = () => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Go to Hufflepuff House</Button>
+        <Button size="small">
+        <Link style={{ color:"white"}} to="/house">Go to Hufflepuff House</Link>
+        </Button>
       </CardActions>
     </Card>
 
@@ -155,7 +157,9 @@ const GreatHall = () => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Go to Ravenclaw House</Button>
+        <Button size="small">
+        <Link style={{ color:"white"}} to="/house">Go to Ravenclaw House</Link>
+        </Button>
       </CardActions>
     </Card>
 
@@ -183,7 +187,9 @@ const GreatHall = () => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Go to Class</Button>
+        <Button size="small">
+        <Link style={{ color:"blue"}} to="/classroom/potions">Go to class</Link>
+        </Button>
       </CardActions>
     </Card>
 
@@ -200,7 +206,9 @@ const GreatHall = () => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Go to Class</Button>
+        <Button size="small">
+        <Link style={{ color:"blue"}} to="/classroom/historymagic">Go to class</Link>
+        </Button>
       </CardActions>
     </Card>
 
@@ -216,7 +224,9 @@ const GreatHall = () => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Go to Class</Button>
+        <Button size="small">
+        <Link style={{ color:"blue"}} to="/classroom/darkarts">Go to class</Link>
+        </Button>
       </CardActions>
     </Card>
 
@@ -232,7 +242,9 @@ const GreatHall = () => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Go to Class</Button>
+        <Button size="small">
+        <Link style={{ color:"blue"}} to="/classroom/transfiguration">Go to class</Link>
+        </Button>
       </CardActions>
     </Card>
 
@@ -248,7 +260,9 @@ const GreatHall = () => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Go to Class</Button>
+        <Button size="small">
+        <Link style={{ color:"blue"}} to="/classroom/charms">Go to class</Link>
+        </Button>
       </CardActions>
     </Card>
     </Grid>
