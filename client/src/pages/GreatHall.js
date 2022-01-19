@@ -207,7 +207,7 @@ const GreatHall = () => {
       </CardContent>
       <CardActions>
         <Button size="small">
-        <Link style={{ color:"blue"}} to="/classroom/historymagic">Go to class</Link>
+        <Link style={{ color:"blue"}} to="/classroom/historyofmagic">Go to class</Link>
         </Button>
       </CardActions>
     </Card>
