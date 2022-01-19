@@ -17,7 +17,7 @@ const LoginPage = (props) => {
     width: "100%",
     color: "white",
     justifyContent: "center",
-    alignItems:"flex-start",
+    alignItems: "flex-start",
   };
 
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -47,42 +47,42 @@ const LoginPage = (props) => {
 
   return (
     <div style={styledDiv}>
-    <Box>
+      <Box>
 
-      <Container>
-        <Box display="flex-row">
-          <Link to="/signup">
-            <ArrowCircleLeftIcon>
-            </ArrowCircleLeftIcon>
-          </Link>
-          <span>Need to Enroll?</span>
-        </Box>
-
-        <form onSubmit={handleFormSubmit}>
-          <Input
-            placeholder="email"
-            type="email"
-            name="email"
-            id="email"
-            onChange={handleChange}>
-          </Input>
-          <Input
-            placeholder="password"
-            type="password"
-            name="password"
-            id="pwd"
-            onChange={handleChange}
-          >
-          </Input>
-          {error ? (
-            <div>
-              <p className="error-text">The provided credentials are incorrect</p>
-            </div>
-          ) : null}
-          <Button type="submit">Login</Button>
-        </form>
-      </Container>
-    </Box>
+        <Container id="login-form">
+          <Box display="flex-row">
+            <Link to="/signup">
+              <ArrowCircleLeftIcon>
+              </ArrowCircleLeftIcon>
+            </Link>
+            <span>Need to Enroll?</span>
+          </Box>
+          <h2>Login</h2>
+          <form onSubmit={handleFormSubmit}>
+            <Input
+              placeholder="email"
+              type="email"
+              name="email"
+              id="email"
+              onChange={handleChange}>
+            </Input>
+            <Input
+              placeholder="password"
+              type="password"
+              name="password"
+              id="pwd"
+              onChange={handleChange}
+            >
+            </Input>
+            {error ? (
+              <div>
+                <p className="error-text">The provided credentials are incorrect</p>
+              </div>
+            ) : null}
+            <Button type="submit">Login</Button>
+          </form>
+        </Container>
+      </Box>
     </div>
   )
 };

@@ -46,7 +46,7 @@ const SignUp = (props) => {
   return (
     <div>
     <Box style={styledDiv}>
-      <Container>
+      <Container id="signup-form">
         <Link to="/login">← Go to Login</Link>
         <h2>Sign Up</h2>
         <form onSubmit={handleFormSubmit}>
