@@ -1,15 +1,9 @@
 import React, { useEffect } from "react";
 import { Typography } from '@mui/material';
 import { useQuery } from "@apollo/client";
-
 import { useStoreContext } from "../utils/GlobalState";
 import { QUERY_ME } from "../utils/queries";
 import { UPDATE_CURRENT_HOUSE, UPDATE_WIZARD } from "../utils/actions";
-import greatHallImage from "../assets/images/common_room2.jpeg";
-import slytherin from "../assets/images/houseIcons/slytherin4.jpeg";
-import gryffindor from "../assets/images/houseIcons/gryffindor3.jpeg";
-import hufflepuff from "../assets/images/houseIcons/hufflepuff.jpeg";
-import ravenclaw from "../assets/images/houseIcons/ravenclaw2.jpeg";
 import { Grid, CardMedia, CardContent, Card} from "@mui/material";
 
 // .me query to get wand and house (which tells which house's common room  to display) and house points
@@ -18,7 +12,7 @@ import { Grid, CardMedia, CardContent, Card} from "@mui/material";
 const CommonRoom = (props) => {
 
   const styledDiv = {
-    backgroundImage: `url(${greatHallImage})`,
+    backgroundImage: `url(https://res.cloudinary.com/dceprxjzq/image/upload/v1642627923/MaraudersTrivia/slytherin_common.jpg)`,
     backgroundSize: "cover",
     height: "100vh",
     width: "100%",
@@ -84,7 +78,7 @@ const CommonRoom = (props) => {
           <CardMedia
             component="img"
             height="175"
-            image={gryffindor}
+            image="https://res.cloudinary.com/dceprxjzq/image/upload/v1642628199/MaraudersTrivia/gryffindor.jpg"
           />
           <CardContent style={{ backgroundColor: "gold" }}>
             <Typography color="black" gutterBottom variant="h6" >
@@ -97,7 +91,7 @@ const CommonRoom = (props) => {
           <CardMedia
             component="img"
             height="175"
-            image={slytherin}
+            image="https://res.cloudinary.com/dceprxjzq/image/upload/v1642628199/MaraudersTrivia/slytherin.jpg"
           />
           <CardContent style={{ backgroundColor: "silver" }}>
             <Typography color="black" gutterBottom variant="h6" >
@@ -110,7 +104,7 @@ const CommonRoom = (props) => {
           <CardMedia
             component="img"
             height="175"
-            image={hufflepuff}
+            image="https://res.cloudinary.com/dceprxjzq/image/upload/v1642628199/MaraudersTrivia/hufflepuff.jpg"
           />
           <CardContent style={{ backgroundColor: "yellow" }}>
             <Typography gutterBottom variant="h6" >
@@ -124,7 +118,7 @@ const CommonRoom = (props) => {
           <CardMedia
             component="img"
             height="175"
-            image={ravenclaw}
+            image="https://res.cloudinary.com/dceprxjzq/image/upload/v1642628200/MaraudersTrivia/ravenclaw.jpg"
           />
           <CardContent style={{ backgroundColor: "mediumBlue" }}>
             <Typography gutterBottom variant="h6" alignment="center">

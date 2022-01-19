@@ -4,13 +4,12 @@ import { Link } from "react-router-dom";
 import Auth from "../../utils/auth";
 import { useMutation } from "@apollo/client";
 import { SIGNUP_USER } from "../../utils/mutations";
-import hogwartsCastle from "../../assets/images/hogwarts_castle.jpeg";
 
 
 const SignUp = (props) => {
 
   const styledDiv = {
-    backgroundImage: `url(${hogwartsCastle})`,
+    backgroundImage: `url(https://res.cloudinary.com/dceprxjzq/image/upload/v1642627920/MaraudersTrivia/hogwarts_castle.jpg)`,
     backgroundSize: "cover",
     height: "100vh",
     width: "100%",

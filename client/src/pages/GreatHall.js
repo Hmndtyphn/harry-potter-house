@@ -2,11 +2,6 @@ import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { useStoreContext } from "../utils/GlobalState";
-import greatHallImage from "../assets/images/great_hall.png";
-import slytherin from "../assets/images/houseIcons/slytherin4.jpeg";
-import gryffindor from "../assets/images/houseIcons/gryffindor3.jpeg";
-import hufflepuff from "../assets/images/houseIcons/hufflepuff.jpeg";
-import ravenclaw from "../assets/images/houseIcons/ravenclaw2.jpeg";
 import { Grid, Typography, CardMedia, CardContent, CardActions, Card, Button } from "@mui/material";
 
 
@@ -41,7 +36,7 @@ const GreatHall = () => {
   // })
 
   const styledDiv = {
-    backgroundImage: `url(${greatHallImage})`,
+    backgroundImage: `url(https://res.cloudinary.com/dceprxjzq/image/upload/v1642627922/MaraudersTrivia/greathall_main.png)`,
     backgroundSize: "cover",
     height: "100vh",
     width: "100%",
@@ -77,7 +72,7 @@ const GreatHall = () => {
       <CardMedia 
         component="img"
         height="220"
-        image={gryffindor}
+        image="https://res.cloudinary.com/dceprxjzq/image/upload/v1642628199/MaraudersTrivia/gryffindor.jpg"
       />
       <CardContent style={{backgroundColor: "gold"}}>
         <Typography gutterBottom alignment="center">
@@ -100,7 +95,7 @@ const GreatHall = () => {
       <CardMedia
         component="img"
         height="220"
-        image={slytherin}
+        image="https://res.cloudinary.com/dceprxjzq/image/upload/v1642628199/MaraudersTrivia/slytherin.jpg"
       />
       <CardContent style={{backgroundColor: "silver"}}>
         <Typography gutterBottom alignment="center">
@@ -122,7 +117,7 @@ const GreatHall = () => {
       <CardMedia
         component="img"
         height="220"
-        image={hufflepuff}
+        image="https://res.cloudinary.com/dceprxjzq/image/upload/v1642628199/MaraudersTrivia/hufflepuff.jpg"
       />
       <CardContent style={{backgroundColor: "yellow"}}>
         <Typography gutterBottom variant="h5" >
@@ -144,7 +139,7 @@ const GreatHall = () => {
       <CardMedia
         component="img"
         height="220"
-        image={ravenclaw}
+        image="https://res.cloudinary.com/dceprxjzq/image/upload/v1642628200/MaraudersTrivia/ravenclaw.jpg"
       />
       <CardContent style={{backgroundColor: "mediumBlue"}}>
         <Typography gutterBottom variant="h5"  alignment="center">
@@ -177,7 +172,7 @@ const GreatHall = () => {
     <CardMedia
         component="img"
         height="150"
-        image={door}
+        image="https://res.cloudinary.com/dceprxjzq/image/upload/v1642628199/MaraudersTrivia/door.jpg"
       />
       <CardContent>
     <Typography variant="body2" color="white">
@@ -196,7 +191,7 @@ const GreatHall = () => {
 
         component="img"
         height="150"
-        image={door}
+        image="https://res.cloudinary.com/dceprxjzq/image/upload/v1642628199/MaraudersTrivia/door.jpg"
       />
       <CardContent>
     <Typography variant="body2" color="white">
@@ -214,7 +209,7 @@ const GreatHall = () => {
     <CardMedia
         component="img"
         height="150"
-        image={door}
+        image="https://res.cloudinary.com/dceprxjzq/image/upload/v1642628199/MaraudersTrivia/door.jpg"
       />
       <CardContent>
     <Typography variant="body2" color="white">
@@ -232,7 +227,7 @@ const GreatHall = () => {
     <CardMedia
         component="img"
         height="150"
-        image={door}
+        image="https://res.cloudinary.com/dceprxjzq/image/upload/v1642628199/MaraudersTrivia/door.jpg"
       />
       <CardContent>
     <Typography variant="body2" color="white">
@@ -250,7 +245,7 @@ const GreatHall = () => {
     <CardMedia
         component="img"
         height="150"
-        image={door}
+        image="https://res.cloudinary.com/dceprxjzq/image/upload/v1642628199/MaraudersTrivia/door.jpg"
       />
       <CardContent>
     <Typography variant="body2" color="white">

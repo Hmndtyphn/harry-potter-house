@@ -1,13 +1,12 @@
 import React from 'react';
 import { Button, Container, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
-import hogwartsCastle from "../assets/images/hogwarts_castle.jpeg";
 
 
 const Landing = () => {
 
   const styledDiv = {
-    backgroundImage: `url(${hogwartsCastle})`,
+    backgroundImage: `url(https://res.cloudinary.com/dceprxjzq/image/upload/v1642627920/MaraudersTrivia/hogwarts_castle.jpg)`,
     backgroundSize: "cover",
     height: "100vh",
     width: "100%",
