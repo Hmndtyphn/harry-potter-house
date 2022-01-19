@@ -107,8 +107,9 @@ export default function Nav() {
   function showNav() {
         if (Auth.loggedIn()) {
           return (
+            
             <ul className="navBar">
-              <li className="li">
+              <li className="li">Potters Marauders
               </li>
               <li className="li"></li>
               <li className="li" >
