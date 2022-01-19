@@ -641,7 +641,7 @@ db.once('open', async () => {
             year: [1, 2, 3]
         },
         {
-            name: 'history of magic',
+            name: 'historyofmagic',
             description: 'ipsim lorem',
             professor: 'Cuthbert Binns',
             image: 'professor_binns',
@@ -649,7 +649,7 @@ db.once('open', async () => {
             year: [1, 2, 3]
         },
         {
-            name: 'defense against the dark arts',
+            name: 'darkarts',
             description: 'ipsum lorem',
             professor: 'Quirinus Quirrell',
             image: 'professor_quirrell',

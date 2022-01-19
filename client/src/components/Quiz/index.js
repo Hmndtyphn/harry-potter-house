@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import {
   Container,
@@ -28,8 +28,8 @@ import potionsImage from "../../assets/images/potionsclass.jpeg";
 // Take Quiz, get results and summary
 // -- render Result component
 // Redirect to Great Hall when Quiz is complete
-const userAnswers = [];
-const correctAnswers = [];
+// const userAnswers = [];
+// const correctAnswers = [];
 
 const Quiz = () => {
   const { name } = useParams();
@@ -37,66 +37,65 @@ const Quiz = () => {
   const { loading, data } = useQuery(QUERY_CLASS, {
     variables: { name },
   });
+   
 
-  const subject = data?.subject || {};
-  const { questions, image, professor } = subject;
+
+  // const subject = data?.subject || {};
+  // const { questions, image, professor } = subject;
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  // empty array to hold randomized quiz questions
-  const quizQuestions = [];
-  // put questions in useState
-  // if statement in useEffect w/ if statement (go to server )
+  const [score, setScore] = useState(0);
+  const [questions, setQuestions] = useState(null);
+  const [endQuiz, setEndQuiz] = useState(false);
 
-  // shuffle function so every quiz is not the same
-  function shuffle(array) {
-    return Math.floor(Math.random() * array.length);
-  }
+  useEffect(async() => {
+    if (data && data.subject && !questions) {
+      // const useQuestions = await fiveQuestions(data.subject.questions)
 
-  // start quiz as soon as user hits link
-  function generateQuiz() {
-    // push a random question as long as the length of the array is less than 5
-    while (quizQuestions.length < 5) {
-      const randomQuestion = shuffle(questions);
-      quizQuestions.push(questions[randomQuestion]);
-
-      correctAnswers.push(questions[randomQuestion].isCorrect)
+      let sliced = data.subject.questions.slice(0,4)
+      setQuestions(sliced)
+      console.log(questions)
     }
+  }, [data, questions, setQuestions])
 
-    console.log("Quiz >> index.js >> line 62 >> randomize questions:", quizQuestions)
-    console.log("Quiz >> index.js >. line 63 >> correct answers:", correctAnswers)
-  }
+  useEffect(() => {
+    if (currentQuestion === 4) {
+      setEndQuiz(true)
+    }
+  }, [currentQuestion, endQuiz]);
 
   // set next question
   function handleChange(event) {
     event.preventDefault();
 
-    // push answer to array
-    userAnswers.push(event.target.value);
-
+    const answer = questions[currentQuestion].isCorrect
+    if (answer === event.target.value) {
+      setScore(score + 2)
+    } else {
+      setScore(score - 1)
+    }
     // set next question
     setCurrentQuestion(currentQuestion + 1);
-
-    console.log(userAnswers);
+    console.log(score);
+    // console.log(userAnswers);
   }
-
-  generateQuiz();
 
   const questionCard = (
     <Card variant="outlined">
       <CardContent>
-        <Typography variant="h5" sx={{ py: 3 }}>
-          {quizQuestions[currentQuestion].question}
-        </Typography>
+        {questions && questions[currentQuestion] && questions[currentQuestion].question ? <Typography variant="h5" sx={{ py: 3 }}>
+          {questions[currentQuestion].question}
+        </Typography> : <div>Loading</div>}
       </CardContent>
       <CardActions>
         <FormControl>
-          <RadioGroup
+          {questions && questions[currentQuestion] && questions[currentQuestion].question ? <RadioGroup
             aria-label="answers"
             name="answer-buttons"
             value={currentQuestion}
             sx={{ pb: 3, pl: 2 }}
             onChange={handleChange}
           >
-            {quizQuestions[currentQuestion].answerOptions.map((answer) => (
+            {questions[currentQuestion].answerOptions.map((answer) => (
               <FormControlLabel
                 key={`${answer}`}
                 value={`${answer}`}
@@ -104,7 +103,7 @@ const Quiz = () => {
                 label={`${answer}`}
               />
             ))}
-          </RadioGroup>
+          </RadioGroup> : <div>Loading</div>}
         </FormControl>
       </CardActions>
     </Card>
@@ -150,9 +149,9 @@ const Quiz = () => {
           </Container>
         </Grid>
 
-        <Grid item xs={6} align="center">
-          <Container className="background">{questionCard}</Container>
-        </Grid>
+        {!endQuiz ? <Grid item xs={6} align="center">
+          {questions ? <Container className="background">{questionCard}</Container> : <div>Loading</div>}
+        </Grid> : <Grid item xs={6} align="center">{`Here is your score for the quiz: ${score}`}</Grid>}
       </Grid>
     </BackgroundDiv>
   );

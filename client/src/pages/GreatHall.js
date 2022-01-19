@@ -1,17 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { useStoreContext } from "../utils/GlobalState";
-import { QUERY_CLASS } from "../utils/queries";
 import greatHallImage from "../assets/images/great_hall.png";
 import slytherin from "../assets/images/houseIcons/slytherin4.jpeg";
 import gryffindor from "../assets/images/houseIcons/gryffindor3.jpeg";
 import hufflepuff from "../assets/images/houseIcons/hufflepuff.jpeg";
 import ravenclaw from "../assets/images/houseIcons/ravenclaw2.jpeg";
 import { Grid, Typography, CardMedia, CardContent, CardActions, Card, Button } from "@mui/material";
-import DoorBackIcon from '@mui/icons-material/DoorBack';
+
+
+
 import door from "../assets/images/houseIcons/door.jpeg";
-import Quiz from "../components/Quiz";
+
 
 // Conflict resolving
 
@@ -24,16 +25,20 @@ import Quiz from "../components/Quiz";
 
 const GreatHall = () => {
   const [state, dispatch] = useStoreContext();  
-  // grab name from params
-  const { name } = useParams();
+ 
+  // const { data: houseData } = useQuery(QUERY_HOUSES);
 
-  // use useQuery(Apollo) to make query request
-  const { loading, data } = useQuery(QUERY_CLASS, {
-    variables: { name },
-  });
+  const { me, houses } = state;
+  console.log(houses);
 
-  const subject = data?.subject || {};
-  const { description, image, professor, questions } = subject;
+  // useEffect(() => {
+  //   if (data) {
+  //     dispatch({
+  //       type: UPDATE_HOUSE_SCORE,
+
+  //     }, [data, dispatch])
+  //   }
+  // })
 
   const styledDiv = {
     backgroundImage: `url(${greatHallImage})`,
@@ -45,21 +50,14 @@ const GreatHall = () => {
     alignItems:"flex-start",
   };
   
+  // if (loading) {
+  //   return <div>Loading...</div>;
+  // }
 
-
-
-  
-
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  
   return (
     <div style={styledDiv}  >
       <Typography align="center" variant="h2" gutterBottom>
-          Welcome to the Great Hall!
+          Welcome, {me.username}, to the Great Hall!
         </Typography>
 
       {/* Gryffindor card */}
@@ -90,7 +88,9 @@ const GreatHall = () => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Go to Gryffindor House</Button>
+        <Button size="small">
+        <Link style={{ color:"white"}} to="/house">Go to Gryffindor House</Link>
+        </Button>
       </CardActions>
     </Card>
     
@@ -111,7 +111,9 @@ const GreatHall = () => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Go to Slytherin House</Button>
+        <Button size="small">
+        <Link style={{ color:"white"}} to="/house">Go to Slytherin House</Link>
+        </Button>
       </CardActions>
     </Card>
 
@@ -131,7 +133,9 @@ const GreatHall = () => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Go to Hufflepuff House</Button>
+        <Button size="small">
+        <Link style={{ color:"white"}} to="/house">Go to Hufflepuff House</Link>
+        </Button>
       </CardActions>
     </Card>
 
@@ -151,7 +155,9 @@ const GreatHall = () => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Go to Ravenclaw House</Button>
+        <Button size="small">
+        <Link style={{ color:"white"}} to="/house">Go to Ravenclaw House</Link>
+        </Button>
       </CardActions>
     </Card>
 
@@ -179,7 +185,9 @@ const GreatHall = () => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Go to Class</Button>
+        <Button size="small">
+        <Link style={{ color:"blue"}} to="/classroom/potions">Go to class</Link>
+        </Button>
       </CardActions>
     </Card>
 
@@ -196,7 +204,9 @@ const GreatHall = () => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Go to Class</Button>
+        <Button size="small">
+        <Link style={{ color:"blue"}} to="/classroom/historyofmagic">Go to class</Link>
+        </Button>
       </CardActions>
     </Card>
 
@@ -212,7 +222,9 @@ const GreatHall = () => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Go to Class</Button>
+        <Button size="small">
+        <Link style={{ color:"blue"}} to="/classroom/darkarts">Go to class</Link>
+        </Button>
       </CardActions>
     </Card>
 
@@ -228,7 +240,9 @@ const GreatHall = () => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Go to Class</Button>
+        <Button size="small">
+        <Link style={{ color:"blue"}} to="/classroom/transfiguration">Go to class</Link>
+        </Button>
       </CardActions>
     </Card>
 
@@ -244,7 +258,9 @@ const GreatHall = () => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Go to Class</Button>
+        <Button size="small">
+        <Link style={{ color:"blue"}} to="/classroom/charms">Go to class</Link>
+        </Button>
       </CardActions>
     </Card>
     </Grid>
