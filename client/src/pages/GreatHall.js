@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
+import { useStoreContext } from "../utils/GlobalState";
 import { QUERY_CLASS } from "../utils/queries";
 import greatHallImage from "../assets/images/great_hall.png";
 import slytherin from "../assets/images/houseIcons/slytherin4.jpeg";
@@ -12,7 +13,7 @@ import DoorBackIcon from '@mui/icons-material/DoorBack';
 import door from "../assets/images/houseIcons/door.jpeg";
 import Quiz from "../components/Quiz";
 
-
+// Conflict resolving
 
 // in Great Hall, link to House
 // Will display all house points, pull props from Global State
@@ -22,6 +23,7 @@ import Quiz from "../components/Quiz";
 
 
 const GreatHall = () => {
+  const [state, dispatch] = useStoreContext();  
   // grab name from params
   const { name } = useParams();
 
