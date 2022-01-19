@@ -45,6 +45,7 @@ const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [questions, setQuestions] = useState(null);
+  const [endQuiz, setEndQuiz] = useState(false);
 
   useEffect(async() => {
     if (data && data.subject && !questions) {
@@ -56,13 +57,17 @@ const Quiz = () => {
     }
   }, [data, questions, setQuestions])
 
+  useEffect(() => {
+    if (currentQuestion === 4) {
+      setEndQuiz(true)
+    }
+  }, [currentQuestion, endQuiz]);
+
   // set next question
   function handleChange(event) {
     event.preventDefault();
 
     const answer = questions[currentQuestion].isCorrect
-    // push answer to array
-    // userAnswers.push(event.target.value);
     if (answer === event.target.value) {
       setScore(score + 2)
     } else {
@@ -77,13 +82,13 @@ const Quiz = () => {
   const questionCard = (
     <Card variant="outlined">
       <CardContent>
-        {questions ? <Typography variant="h5" sx={{ py: 3 }}>
+        {questions && questions[currentQuestion] && questions[currentQuestion].question ? <Typography variant="h5" sx={{ py: 3 }}>
           {questions[currentQuestion].question}
         </Typography> : <div>Loading</div>}
       </CardContent>
       <CardActions>
         <FormControl>
-          {questions ? <RadioGroup
+          {questions && questions[currentQuestion] && questions[currentQuestion].question ? <RadioGroup
             aria-label="answers"
             name="answer-buttons"
             value={currentQuestion}
@@ -144,9 +149,9 @@ const Quiz = () => {
           </Container>
         </Grid>
 
-        <Grid item xs={6} align="center">
+        {!endQuiz ? <Grid item xs={6} align="center">
           {questions ? <Container className="background">{questionCard}</Container> : <div>Loading</div>}
-        </Grid>
+        </Grid> : <Grid item xs={6} align="center">{`Here is your score for the quiz: ${score}`}</Grid>}
       </Grid>
     </BackgroundDiv>
   );
