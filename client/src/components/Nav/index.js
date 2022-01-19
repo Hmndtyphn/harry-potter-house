@@ -108,15 +108,14 @@ export default function Nav() {
         if (Auth.loggedIn()) {
           return (
             <ul className="navBar">
-              <li className="li"> 
-           <AutoFixHighIcon/>
+              <li className="li">
               </li>
               <li className="li"></li>
-              <li className="li" flexRow="row">
-                <Link style={{ textDecoration: "none", color:"White"}} to="/greathall">Great Hall</Link>
+              <li className="li" >
+                <Link style={{ color:"black"}} to="/greathall">Great Hall</Link>
               </li>
               <li className="li">
-                <Link style={{ textDecoration: "none", color:"White" }} to="/house">Common Room</Link>
+                <Link style={{ color:"black"}} to="/house">Common Room</Link>
               </li>
             </ul>
           );
@@ -125,10 +124,17 @@ export default function Nav() {
 
   
   return (
-    <Box sx={{ flexGrow: 1 }} >
-      <AppBar position="static" style= {{background: "	#e3a000"}}>
+    <Box >
+      <AppBar position="static" style= {{background: "#e3a000"}}>
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography 
+          color="black"
+          variant="h6" display="flex"
+          alignItems="stretch" 
+          justifyContent="space-between"
+          width="65%"
+          margin= "10"
+          padding="10">
            {showNav()}
           </Typography>
           {/* <Button color="inherit" font="">Login</Button> */}
