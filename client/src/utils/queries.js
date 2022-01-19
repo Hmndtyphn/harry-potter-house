@@ -23,6 +23,7 @@ export const QUERY_ALL_CLASSES = gql`
     subjects {
     _id
     name
+    alias
     description
     professor
     image
@@ -37,6 +38,7 @@ export const QUERY_CLASS = gql`
     subject(name: $name) {
       _id
       name
+      alias
       description
       professor
       image

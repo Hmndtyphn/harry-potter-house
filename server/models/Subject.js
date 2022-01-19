@@ -6,6 +6,9 @@ const SubjectSchema = new Schema(
             type: String,
             required: true
         },
+        alias: {
+          type: String
+        },
         description: {
             type: String,
             required: true

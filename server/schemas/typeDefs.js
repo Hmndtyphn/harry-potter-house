@@ -28,6 +28,7 @@ const typeDefs = gql`
     type Subject {
         _id: ID
         name: String
+        alias: String
         description: String
         professor: String
         image: String

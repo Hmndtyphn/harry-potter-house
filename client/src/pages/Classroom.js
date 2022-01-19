@@ -19,13 +19,13 @@ const Classroom = () => {
   });
 
   const subject = data?.subject || {};
-  const { description, image, professor, questions } = subject;
+  const { description,alias, image, professor, questions } = subject;
+  console.log(subject);
 
   const styledDiv = {
-    backgroundImage: `url(${potionsImage})`,
     backgroundSize: 'cover',
     height: '100vh',
-    color: "white",
+    color: "black",
   };
 
   if (loading) {
@@ -36,7 +36,7 @@ const Classroom = () => {
     <div style={styledDiv}>
       <Container>
         <Typography variant="h3" sx={{ p:2 }} >
-          {`Welcome to ${capitalizeFirstLetter(name)} class taught by Professor ${professor} where you will
+          {`Welcome to ${alias} class taught by Professor ${professor} where you will
           learn ${description}. Take out your text and prepare to start your
           quiz.`}
         </Typography>

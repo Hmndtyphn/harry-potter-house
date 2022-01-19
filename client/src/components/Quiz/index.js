@@ -53,7 +53,6 @@ const Quiz = () => {
 
       let sliced = data.subject.questions.slice(0,4)
       setQuestions(sliced)
-      console.log(questions)
     }
   }, [data, questions, setQuestions])
 

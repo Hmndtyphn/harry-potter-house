@@ -618,6 +618,7 @@ db.once('open', async () => {
     const subjects = await Subject.insertMany([
         {
             name: 'transfiguration',
+            alias: 'Transfiguration',
             description: 'ipsum lorem',
             professor: 'Minerva McGonagall',
             image: 'professor_mcgonagall',
@@ -626,6 +627,7 @@ db.once('open', async () => {
         },
         {
             name: 'potions',
+            alias: 'Potions',
             description: 'ipsim lorem',
             professor: 'Severus Snape',
             image: 'professor_snape',
@@ -634,6 +636,7 @@ db.once('open', async () => {
         },
         {
             name: 'charms',
+            alias: 'Charms',
             description: 'ipsim lorem',
             professor: 'Filius Flitwick',
             image: 'professor_flitwick',
@@ -642,14 +645,16 @@ db.once('open', async () => {
         },
         {
             name: 'historyofmagic',
+            alias: 'History of Magic',
             description: 'ipsim lorem',
             professor: 'Cuthbert Binns',
-            image: 'professor_binns',
+            image: 'professor_binns.jpeg',
             questions: [questions[62], questions[63], questions[64], questions[65], questions[66], questions[67], questions[68], questions[69], questions[70], questions[71], questions[72], questions[73], questions[74], questions[75], questions[76]],
             year: [1, 2, 3]
         },
         {
             name: 'darkarts',
+            alias: 'Defense Against the Dark Arts',
             description: 'ipsum lorem',
             professor: 'Quirinus Quirrell',
             image: 'professor_quirrell',
