@@ -9,9 +9,9 @@ import gryffindor from "../assets/images/houseIcons/gryffindor3.jpeg";
 import hufflepuff from "../assets/images/houseIcons/hufflepuff.jpeg";
 import ravenclaw from "../assets/images/houseIcons/ravenclaw2.jpeg";
 import { Grid, Typography, CardMedia, CardContent, CardActions, Card, Button } from "@mui/material";
-import DoorBackIcon from '@mui/icons-material/DoorBack';
+// import DoorBackIcon from '@mui/icons-material/DoorBack';
 import door from "../assets/images/houseIcons/door.jpeg";
-import Quiz from "../components/Quiz";
+// import Quiz from "../components/Quiz";
 
 // Conflict resolving
 
