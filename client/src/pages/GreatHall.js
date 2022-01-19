@@ -8,7 +8,11 @@ import gryffindor from "../assets/images/houseIcons/gryffindor3.jpeg";
 import hufflepuff from "../assets/images/houseIcons/hufflepuff.jpeg";
 import ravenclaw from "../assets/images/houseIcons/ravenclaw2.jpeg";
 import { Grid, Typography, CardMedia, CardContent, CardActions, Card, Button } from "@mui/material";
+
+
+=======
 import door from "../assets/images/houseIcons/door.jpeg";
+
 
 // Conflict resolving
 
