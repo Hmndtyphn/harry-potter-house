@@ -90,7 +90,9 @@ const GreatHall = () => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Go to Gryffindor House</Button>
+        <Button size="small">
+        <Link style={{ color:"black"}} to="/house">Go to Gryffindor House</Link>
+        </Button>
       </CardActions>
     </Card>
     
@@ -111,7 +113,9 @@ const GreatHall = () => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Go to Slytherin House</Button>
+        <Button size="small">Go to Slytherin House
+        
+        </Button>
       </CardActions>
     </Card>
 
