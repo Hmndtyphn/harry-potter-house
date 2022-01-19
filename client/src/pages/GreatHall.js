@@ -4,13 +4,6 @@ import { useQuery } from "@apollo/client";
 import { useStoreContext } from "../utils/GlobalState";
 import { Grid, Typography, CardMedia, CardContent, CardActions, Card, Button } from "@mui/material";
 
-import door from "../assets/images/houseIcons/door.jpeg";
-
-
-
-
-import door from "../assets/images/houseIcons/door.jpeg";
-
 
 // Conflict resolving
 
