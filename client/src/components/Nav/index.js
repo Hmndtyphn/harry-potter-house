@@ -91,8 +91,6 @@ import "./index.css";
 //   );
 // }
 
-
-
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -104,6 +102,7 @@ import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
 
 
 export default function Nav() {
+
   function showNav() {
         if (Auth.loggedIn()) {
           return (

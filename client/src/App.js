@@ -21,6 +21,7 @@ import Nav from './components/Nav';
 import SignUp from './components/SignUp';
 import LoginPage from './components/Login';
 import NoMatch from './pages/NoMatch';
+import Header from './components/Header';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -53,6 +54,7 @@ function App() {
           <StoreProvider>
             <div>
               <Nav />
+              <Header/>
               <Switch>
                 <Route exact path="/" component={Landing} />
                 <Route exact path="/login" component={LoginPage} />
