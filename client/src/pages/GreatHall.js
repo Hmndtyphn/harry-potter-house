@@ -8,6 +8,8 @@ import gryffindor from "../assets/images/houseIcons/gryffindor3.jpeg";
 import hufflepuff from "../assets/images/houseIcons/hufflepuff.jpeg";
 import ravenclaw from "../assets/images/houseIcons/ravenclaw2.jpeg";
 import { Grid, Typography, CardMedia, CardContent, CardActions, Card, Button } from "@mui/material";
+import DoorBackIcon from '@mui/icons-material/DoorBack';
+import door from "../assets/images/houseIcons/door.jpeg";
 import Quiz from "../components/Quiz";
 
 
@@ -37,24 +39,10 @@ const GreatHall = () => {
     height: "100vh",
     width: "100%",
     color: "white",
+    justifyContent: "center",
+    alignItems:"flex-start",
   };
-  const SlytherinImage = {
-    backgroundImage: `url(${slytherin})`,
-    height: "100vh",
-  };
-  const GryffindorImage = {
-    backgroundImage: `url(${gryffindor})`,
-    height: "100vh", 
-  };
-  const HufflepuffImage = {
-    backgroundImage: `url(${hufflepuff})`,
-    height: "100vh", 
-  };
-  // ravenclaw is amazing
-  const RavenclawImage = {
-    backgroundImage: `url(${hufflepuff})`,
-    height: "100vh", 
-  };
+  
 
 
 
@@ -68,7 +56,7 @@ const GreatHall = () => {
   
   return (
     <div style={styledDiv}  >
-      <Typography align="center" variant="h2" color="white" sx={{pt: 1}} gutterBottom>
+      <Typography align="center" variant="h2" gutterBottom>
           Welcome to the Great Hall!
         </Typography>
 
@@ -76,7 +64,7 @@ const GreatHall = () => {
       <Grid 
                     container
                     sx={{ pr: 10, pl: 10 }}
-                    sx={{ pt: 25, pb: 25 }}
+                    sx={{ pt: 20, pb: 25 }}
                     direction="row"
                     justifyContent="space-around"
                     alignItems="flex-start"
@@ -96,7 +84,7 @@ const GreatHall = () => {
           Gryffindor
         </Typography>
         <Typography color="black">
-          Words about Gryffindor House
+          Info about Gryffindor House
         </Typography>
       </CardContent>
       <CardActions>
@@ -164,6 +152,100 @@ const GreatHall = () => {
         <Button size="small">Go to Ravenclaw House</Button>
       </CardActions>
     </Card>
+
+
+    <Grid 
+                    container
+                    sx={{ pr: 10, pl: 10 }}
+                    sx={{ pt: 25, pb: 0 }}
+                    direction="row"
+                    justifyContent="space-around"
+                    alignItems="flex-start"
+                    rowSpacing={20}
+                    flew-row="center"
+
+                  >
+    <Card style={{backgroundColor: "black"}}>
+    <CardMedia
+        component="img"
+        height="150"
+        image={door}
+      />
+      <CardContent>
+    <Typography variant="body2" color="white">
+          Potions
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small">Go to Class</Button>
+      </CardActions>
+    </Card>
+
+    <Card style={{backgroundColor: "black"}}>
+    <CardMedia
+
+        component="img"
+        height="150"
+        image={door}
+      />
+      <CardContent>
+    <Typography variant="body2" color="white">
+          History of Magic
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small">Go to Class</Button>
+      </CardActions>
+    </Card>
+
+    <Card style={{backgroundColor: "black"}}>
+    <CardMedia
+        component="img"
+        height="150"
+        image={door}
+      />
+      <CardContent>
+    <Typography variant="body2" color="white">
+          Dark Arts
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small">Go to Class</Button>
+      </CardActions>
+    </Card>
+
+    <Card style={{backgroundColor: "black"}}>
+    <CardMedia
+        component="img"
+        height="150"
+        image={door}
+      />
+      <CardContent>
+    <Typography variant="body2" color="white">
+          Transfiguration
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small">Go to Class</Button>
+      </CardActions>
+    </Card>
+
+    <Card style={{backgroundColor: "black"}}>
+    <CardMedia
+        component="img"
+        height="150"
+        image={door}
+      />
+      <CardContent>
+    <Typography variant="body2" color="white">
+          Charms
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small">Go to Class</Button>
+      </CardActions>
+    </Card>
+    </Grid>
     </Grid> 
 </div> 
   );
