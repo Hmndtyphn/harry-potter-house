@@ -30,7 +30,8 @@ const typeDefs = gql`
         name: String
         description: String
         professor: String
-        image: String
+        profImg: String
+        classImg: String
         questions: [Question]
         year: [Int]
     }

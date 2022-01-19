@@ -6,16 +6,13 @@ import {
   Grid,
   Box,
   Card,
-  CardHeader,
-  CardContent
+  CardContent,
 } from "@mui/material";
 import QuestionCard from "../QuestionCard";
 import { styled } from "@mui/material/styles";
-import images from "../../assets/images/snape_4.jpeg";
 import { useQuery } from "@apollo/client";
 import { capitalizeFirstLetter } from "../../utils/helpers";
 import { QUERY_CLASS } from "../../utils/queries";
-import potionsImage from "../../assets/images/potionsclass.jpeg";
 
 const Quiz = () => {
   const { name } = useParams();
@@ -24,17 +21,21 @@ const Quiz = () => {
     variables: { name },
   });
 
+  const subject = data?.subject || {};
+  const { classImg, profImg} = subject;
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [questions, setQuestions] = useState(null);
   const [endQuiz, setEndQuiz] = useState(false);
 
   useEffect(() => {
-    if (data && data.subject && !questions) {
 
+    if (data && data.subject && !questions) {
       let sliced = data.subject.questions.slice(0, 4);
       setQuestions(sliced);
+      console.log(data)
     }
+
   }, [data, questions, setQuestions]);
 
   useEffect(() => {
@@ -43,9 +44,8 @@ const Quiz = () => {
     }
   }, [currentQuestion, endQuiz]);
 
-
   const BackgroundDiv = styled(Box)(({ theme }) => ({
-    backgroundImage: `url(${potionsImage})`,
+    backgroundImage: `url(https://res.cloudinary.com/dceprxjzq/image/upload/v1642627920/MaraudersTrivia/${classImg}.jpg)`,
     backgroundSize: "cover",
     height: "100vh",
     color: "white",
@@ -76,7 +76,7 @@ const Quiz = () => {
           {/* images */}
           <Container>
             <img
-              src={images}
+              src={`https://res.cloudinary.com/dceprxjzq/image/upload/v1642627918/MaraudersTrivia/${profImg}.jpg`}
               style={{ height: "25rem", width: "25rem" }}
               align="center"
               alt="Professor Snape"
@@ -103,18 +103,16 @@ const Quiz = () => {
             )}
           </Grid>
         ) : (
-          <Grid
-            item
-            xs={6}
-            align="center"
-            sx={{ pr: 15 }}>
-              <Card variant="outlined" sx={{ py: 10 }}>
-                <CardContent>
-
-                    <Typography variant='h5'>Here are the points you've<br /> earned or lost your house: <br />{`${score}`}</Typography>
-                  
-                </CardContent>
-              </Card>
+          <Grid item xs={6} align="center" sx={{ pr: 15 }}>
+            <Card variant="outlined" sx={{ py: 10 }}>
+              <CardContent>
+                <Typography variant="h5">
+                  Here are the points you've
+                  <br /> earned or lost your house: <br />
+                  {`${score}`}
+                </Typography>
+              </CardContent>
+            </Card>
           </Grid>
         )}
       </Grid>

@@ -14,7 +14,11 @@ const SubjectSchema = new Schema(
             type: String,
             required: true
         },
-        image: {
+        profImg: {
+            type: String,
+            required: true
+        },
+        classImg: {
             type: String,
             required: true
         },

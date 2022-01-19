@@ -25,7 +25,6 @@ export const QUERY_ALL_CLASSES = gql`
     name
     description
     professor
-    image
     year
   }
 }
@@ -39,7 +38,8 @@ export const QUERY_CLASS = gql`
       name
       description
       professor
-      image
+      profImg
+      classImg
       questions {
         question
         answerOptions
