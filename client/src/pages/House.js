@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import { Link, useParams } from 'react-router-dom';
-import { Box, Container, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
+import { Typography } from '@mui/material';
 import { useQuery } from "@apollo/client";
 
 import { useStoreContext } from "../utils/GlobalState";
