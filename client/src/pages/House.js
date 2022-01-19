@@ -59,10 +59,23 @@ const CommonRoom = (props) => {
   return (
     <div style={styledDiv}>
 
+<Typography container
+                    sx={{ pr: 5, pl: 5 }}
+                    sx={{ pt: 0, pb: 0 }}
+                    direction="row"
+                    justifyContent="space-around"
+                    alignItems="center"
+                    
+                    >
+        <h2>Welcome, {wizard}, to your common room{currentHouse}</h2>
+        <p>Or perhaps Slytherin...</p>
+        <Link style={{ color:"white"}}to="/greathall">Visit the Great Hall</Link>
+        </Typography>
+
 <Grid 
                     container
                     sx={{ pr: 5, pl: 5 }}
-                    sx={{ pt: 50, pb: 10 }}
+                    sx={{ pt: 25, pb: 10 }}
                     direction="row"
                     justifyContent="space-around"
                     alignItems="flex-start"
@@ -122,11 +135,6 @@ const CommonRoom = (props) => {
       </CardContent>
     </Card>
 
-        <Typography>
-        <h2>Welcome, {wizard}, to {currentHouse}</h2>
-        <p>Or perhaps Slytherin...</p>
-        <Link style={{ color:"white"}}to="/greathall">Visit the Great Hall</Link>
-        </Typography>
     </Grid>
     </div>
   )
