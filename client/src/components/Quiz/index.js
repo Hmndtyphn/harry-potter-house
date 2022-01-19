@@ -57,6 +57,12 @@ const Quiz = () => {
     }
   }, [data, questions, setQuestions])
 
+  useEffect(() => {
+    if (currentQuestion === 4) {
+      setEndQuiz(true)
+    }
+  }, [currentQuestion, endQuiz]);
+
   // set next question
   function handleChange(event) {
     event.preventDefault();
@@ -76,13 +82,13 @@ const Quiz = () => {
   const questionCard = (
     <Card variant="outlined">
       <CardContent>
-        {questions ? <Typography variant="h5" sx={{ py: 3 }}>
+        {questions && questions[currentQuestion] && questions[currentQuestion].question ? <Typography variant="h5" sx={{ py: 3 }}>
           {questions[currentQuestion].question}
         </Typography> : <div>Loading</div>}
       </CardContent>
       <CardActions>
         <FormControl>
-          {questions ? <RadioGroup
+          {questions && questions[currentQuestion] && questions[currentQuestion].question ? <RadioGroup
             aria-label="answers"
             name="answer-buttons"
             value={currentQuestion}
