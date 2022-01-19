@@ -1,11 +1,24 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import { Container, Typography, Grid, Box, FormControl, FormControlLabel, RadioGroup, Radio, Card, CardActions, CardContent } from "@mui/material";
-import { styled } from '@mui/material/styles';
+import {
+  Container,
+  Typography,
+  Grid,
+  Box,
+  FormControl,
+  FormControlLabel,
+  RadioGroup,
+  Radio,
+  Card,
+  CardActions,
+  CardContent,
+} from "@mui/material";
+import { styled } from "@mui/material/styles";
 import Result from "../Result";
-import images from "../../assets/images/snape_2.jpeg";
+import images from "../../assets/images/snape_4.jpeg";
 // import coverPhoto2 from "../../assets/";
 import { useQuery } from "@apollo/client";
+import { capitalizeFirstLetter } from "../../utils/helpers";
 import { QUERY_CLASS } from "../../utils/queries";
 import potionsImage from "../../assets/images/potionsclass.jpeg";
 
@@ -16,6 +29,7 @@ import potionsImage from "../../assets/images/potionsclass.jpeg";
 // -- render Result component
 // Redirect to Great Hall when Quiz is complete
 const userAnswers = [];
+const correctAnswers = [];
 
 const Quiz = () => {
   const { name } = useParams();
@@ -26,23 +40,29 @@ const Quiz = () => {
 
   const subject = data?.subject || {};
   const { questions, image, professor } = subject;
-  console.log("index.js >> Quiz >> line 26 >> questions ==>", questions);
-  const [currentQuestion, setCurrentQuestion] = useState(0)
+  const [currentQuestion, setCurrentQuestion] = useState(0);
   // empty array to hold randomized quiz questions
   const quizQuestions = [];
-  // empty array to hold user answers
-  
-
-  const BackgroundDiv = styled(Box)(({ theme }) => ({
-    backgroundImage: `url(${potionsImage})`,
-    backgroundSize: 'cover',
-    height: "100vh",
-    color: "white"
-  }))
+  // put questions in useState
+  // if statement in useEffect w/ if statement (go to server )
 
   // shuffle function so every quiz is not the same
   function shuffle(array) {
     return Math.floor(Math.random() * array.length);
+  }
+
+  // start quiz as soon as user hits link
+  function generateQuiz() {
+    // push a random question as long as the length of the array is less than 5
+    while (quizQuestions.length < 5) {
+      const randomQuestion = shuffle(questions);
+      quizQuestions.push(questions[randomQuestion]);
+
+      correctAnswers.push(questions[randomQuestion].isCorrect)
+    }
+
+    console.log("Quiz >> index.js >> line 62 >> randomize questions:", quizQuestions)
+    console.log("Quiz >> index.js >. line 63 >> correct answers:", correctAnswers)
   }
 
   // set next question
@@ -50,47 +70,52 @@ const Quiz = () => {
     event.preventDefault();
 
     // push answer to array
-    userAnswers.push(event.target.value)
+    userAnswers.push(event.target.value);
 
-    // set next question 
-    setCurrentQuestion(currentQuestion + 1)
-    // quizQuestions[]
-    console.log(userAnswers)
-    
+    // set next question
+    setCurrentQuestion(currentQuestion + 1);
+
+    console.log(userAnswers);
   }
 
-  // start quiz as soon as user hits link
-  function generateQuestions() {
+  generateQuiz();
 
-    // push a random question as long as the length of the array is less than 5
-    while (quizQuestions.length < 5) {
-      const randomQuestion = shuffle(questions);
-      quizQuestions.push(questions[randomQuestion]);
-    }
-
-    console.log("Quiz >> index.js >> line 46 >> randomized questions:", quizQuestions)
-    // maybe add state to control form
-    return (
-      <Container>
-        <Typography variant="h5" sx={{py: 5}}>
+  const questionCard = (
+    <Card variant="outlined">
+      <CardContent>
+        <Typography variant="h5" sx={{ py: 3 }}>
           {quizQuestions[currentQuestion].question}
         </Typography>
+      </CardContent>
+      <CardActions>
         <FormControl>
           <RadioGroup
             aria-label="answers"
             name="answer-buttons"
             value={currentQuestion}
-            onChange={handleChange}>
-              {quizQuestions[currentQuestion].answerOptions.map((answer) => (
-                <FormControlLabel key={`${answer}`} value={`${answer}`} control={<Radio />} label={`${answer}`}/>
-              ))}
-            </RadioGroup>
+            sx={{ pb: 3, pl: 2 }}
+            onChange={handleChange}
+          >
+            {quizQuestions[currentQuestion].answerOptions.map((answer) => (
+              <FormControlLabel
+                key={`${answer}`}
+                value={`${answer}`}
+                control={<Radio />}
+                label={`${answer}`}
+              />
+            ))}
+          </RadioGroup>
         </FormControl>
-      </Container>
-    )
+      </CardActions>
+    </Card>
+  );
 
-  }
-
+  const BackgroundDiv = styled(Box)(({ theme }) => ({
+    backgroundImage: `url(${potionsImage})`,
+    backgroundSize: "cover",
+    height: "100vh",
+    color: 'white'
+  }));
 
   if (loading) {
     return <div>Loading...</div>;
@@ -102,18 +127,18 @@ const Quiz = () => {
         className="title"
         variant="h2"
         align="center"
-        sx={{ pt: 10 }}
+        sx={{ py: 10 }}
         gutterBottom
       >
-        {name} Quiz
+        {capitalizeFirstLetter(name)} Quiz
       </Typography>
-      
+
       <Grid
         container
         sx={{ display: "flex", flexWrap: "wrap", justifyContent: "flex" }}
         alignItems="center"
       >
-        <Grid item xs align='center'>
+        <Grid item xs align="center">
           {/* images */}
           <Container>
             <img
@@ -125,8 +150,8 @@ const Quiz = () => {
           </Container>
         </Grid>
 
-        <Grid item xs={5} align='center'>
-          <Container className="background">{generateQuestions()}</Container>
+        <Grid item xs={6} align="center">
+          <Container className="background">{questionCard}</Container>
         </Grid>
       </Grid>
     </BackgroundDiv>
