@@ -10,7 +10,7 @@ import ravenclaw from "../assets/images/houseIcons/ravenclaw2.jpeg";
 import { Grid, Typography, CardMedia, CardContent, CardActions, Card, Button } from "@mui/material";
 
 
-=======
+
 import door from "../assets/images/houseIcons/door.jpeg";
 
 

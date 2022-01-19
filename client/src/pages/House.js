@@ -119,14 +119,9 @@ const CommonRoom = (props) => {
       <CardContent style={{backgroundColor: "yellow"}}>
         <Typography gutterBottom variant="h6" >
           House Points: 345
+          </Typography>
+          </CardContent>
 
-    
-      <Container>
-        <Typography>
-        <h2>Welcome, {wizard}, to your house's common room!</h2>
-
-        </Typography>
-      </CardContent>
     </Card>
 
     <Card sx={{ pr: 5, pl: 5  }} style={{backgroundColor: "silver"}}>
