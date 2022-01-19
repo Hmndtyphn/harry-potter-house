@@ -3,10 +3,14 @@ const User = require("./User");
 
 const HouseSchema = new Schema(
   {
+    houseName: {
+      type: String,
+      required: true,
+    },
     wizards: [
       {
         type: Schema.Types.ObjectId,
-        ref: User
+        ref: 'User'
       }
     ],
     points: {

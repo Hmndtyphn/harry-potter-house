@@ -1,5 +1,5 @@
 const db = require('./connection');
-const { User, Subject, Question } = require('../models');
+const { User, Subject, Question, House } = require('../models');
 
 db.once('open', async () => {
     
@@ -699,6 +699,33 @@ db.once('open', async () => {
 
     ])
     console.log('Users seeded.')
+
+    await House.deleteMany()
+
+    const house = await House.insertMany([
+      {
+        houseName: "Gryffindor",
+        headOfHouse: "Minerva McGonagall",
+        wizards: []
+      },
+      {
+        houseName: "Hufflepuff",
+        headOfHouse: "Pomona Sprout",
+        wizards: []
+      },
+      {
+        houseName: "RavenClaw",
+        headOfHouse: "Filius Flitwick",
+        wizards: []
+      },
+      {
+        houseName: "Slytherin",
+        headOfHouse: "Severus Snape",
+        wizards: []
+      }
+    ])
+
+    console.log('Houses seeded')
 
     console.log('All seeds added')
     process.exit();

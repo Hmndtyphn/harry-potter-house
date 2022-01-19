@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Subject, Question } = require("../models");
+const { User, Subject, Question, House } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
@@ -28,6 +28,9 @@ const resolvers = {
     },
     questions: async () => {
         return Question.find()
+    },
+    houses: async () => {
+      return House.find();
     }
   },
   Mutation: {
@@ -54,7 +57,18 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
+    // joinHouse: async (parent, { houseId, wizardName }, context) => {
+    //   console.log(context);
+    //   if (context.user) {
+    //     const wizard = User.findOne({ _id: context.user._id });
+    
 
+    //     await House.findByIdAndUpdate(houseId, { $push: { wizards: wizardName }});
+
+    //     return wizard;
+
+    //   }
+    // },
     updateUser: async (parent, args, context) => {
       if (context.user) {
         return await User.findByIdAndUpdate(context.user._id, args, {

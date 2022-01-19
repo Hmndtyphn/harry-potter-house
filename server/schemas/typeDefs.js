@@ -36,6 +36,14 @@ const typeDefs = gql`
         year: [Int]
     }
 
+    type House {
+      _id: ID
+      houseName: String
+      wizards: [User]
+      points: Int
+      headOfHouse: String
+    }
+
     type Auth {
         token: ID!
         user: User
@@ -48,6 +56,7 @@ const typeDefs = gql`
         questions: [Question]
         subjects: [Subject]
         subject(name: String!): Subject
+        houses: [House]
     }
 
     type Mutation {
