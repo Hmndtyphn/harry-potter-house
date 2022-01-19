@@ -56,10 +56,7 @@ const CommonRoom = (props) => {
     <Box>
       <Container>
         <Typography>
-        <h2>Welcome, {wizard}, to {currentHouse}</h2>
-        <p>Or perhaps Slytherin...</p>
-        <Link style={{ color:"white"}}
-        to="/greathall">Visit the Great Hall</Link>
+        <h2>Welcome, {wizard}, to your house's common room!</h2>
         </Typography>
       </Container>
     </Box>
