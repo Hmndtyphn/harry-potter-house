@@ -2,7 +2,6 @@ import React from "react";
 import { useQuery } from "@apollo/client";
 import { QUERY_CLASS } from "../utils/queries";
 import { capitalizeFirstLetter } from "../utils/helpers";
-import potionsImage from "../assets/images/potionsclass.jpeg";
 
 import { Link, useParams } from "react-router-dom";
 
@@ -19,7 +18,7 @@ const Classroom = () => {
   });
 
   const subject = data?.subject || {};
-  const { description, classImg, profImg, professor, questions } = subject;
+  const { description, classImg, professor } = subject;
 
   const styledDiv = {
     backgroundImage: `url(https://res.cloudinary.com/dceprxjzq/image/upload/v1642627920/MaraudersTrivia/${classImg}.jpg)`,

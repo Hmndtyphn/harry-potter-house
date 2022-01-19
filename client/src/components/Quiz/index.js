@@ -10,11 +10,9 @@ import {
 } from "@mui/material";
 import QuestionCard from "../QuestionCard";
 import { styled } from "@mui/material/styles";
-import images from "../../assets/images/snape_4.jpeg";
 import { useQuery } from "@apollo/client";
 import { capitalizeFirstLetter } from "../../utils/helpers";
 import { QUERY_CLASS } from "../../utils/queries";
-import potionsImage from "../../assets/images/potionsclass.jpeg";
 
 const Quiz = () => {
   const { name } = useParams();
