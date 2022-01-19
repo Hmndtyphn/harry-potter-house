@@ -43,6 +43,8 @@ const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   // empty array to hold randomized quiz questions
   const quizQuestions = [];
+  // put questions in useState
+  // if statement in useEffect w/ if statement (go to server )
 
   // shuffle function so every quiz is not the same
   function shuffle(array) {
@@ -72,7 +74,7 @@ const Quiz = () => {
 
     // set next question
     setCurrentQuestion(currentQuestion + 1);
-    
+
     console.log(userAnswers);
   }
 
