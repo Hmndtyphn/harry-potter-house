@@ -55,11 +55,7 @@ const Quiz = () => {
       setQuestions(sliced)
       console.log(questions)
     }
-
-    if(currentQuestion < 5) {
-      setEndQuiz(endQuiz => !endQuiz)
-    }
-  }, [data, questions, setQuestions, endQuiz, currentQuestion])
+  }, [data, questions, setQuestions])
 
   // set next question
   function handleChange(event) {
