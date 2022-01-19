@@ -1,12 +1,23 @@
 import React from 'react';
 import { Button, Container } from '@mui/material';
 import { Link } from 'react-router-dom';
+import hogwartsCastle from "../assets/images/hogwarts_castle.jpeg";
 
 
 const Landing = () => {
 
+  const styledDiv = {
+    backgroundImage: `url(${hogwartsCastle})`,
+    backgroundSize: "cover",
+    height: "100vh",
+    width: "100%",
+    color: "white",
+    justifyContent: "center",
+    alignItems:"flex-start",
+  };
+
   return (
-    <div>
+    <div style={styledDiv}>
       <Container>
         <h1>Welcome to Hogwarts!</h1>
         <Container>
