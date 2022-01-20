@@ -4,6 +4,18 @@ import { useQuery } from "@apollo/client";
 import { useStoreContext } from "../utils/GlobalState";
 import { Grid, Typography, CardMedia, CardContent, CardActions, Card, Button } from "@mui/material";
 
+<<<<<<< HEAD
+=======
+
+// Conflict resolving
+
+// in Great Hall, link to House
+// Will display all house points, pull props from Global State
+// Map out classes to display Cards/Doors that link to classrooms
+// Logout Link, need to build still
+// Style with @material/mui
+
+>>>>>>> 0d5b8409f0f31cc890e5c0e3574985f18f17656b
 
 
 const GreatHall = () => {
