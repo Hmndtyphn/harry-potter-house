@@ -19,7 +19,6 @@ const Classroom = () => {
 
   const subject = data?.subject || {};
   const { description, classImg, professor } = subject;
-
   const styledDiv = {
     backgroundImage: `url(https://res.cloudinary.com/dceprxjzq/image/upload/v1642627920/MaraudersTrivia/${classImg}.jpg)`,
     backgroundSize: 'cover',
