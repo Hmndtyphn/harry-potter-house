@@ -10,7 +10,7 @@
   ## Description
   A Harry Potter fans dream app! Welcome to Potters Marauders, an app that allows you to test your Harry Potter trivia with a series of trivia questions, based on specific classes from Hogwarts!
   ## Installation
-  Navigate to ![Potter's Marauders](https://stark-plains-49295.herokuapp.com/).
+  Navigate to [Potter's Marauders](https://stark-plains-49295.herokuapp.com/).
   ## Usage
   Login or signup with your Wizard name, email address and password. Head to your common room to se house points, then head to the great hall for a challenging set of trivia from the Harry Potter universe.<br>
   undefined
