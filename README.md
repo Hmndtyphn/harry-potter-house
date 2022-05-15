@@ -4,6 +4,7 @@
 * [Description](#Description)  <br>
 * [Installation](#Installation)<br>
 * [Usage](#Usage)<br>
+* [Technologies](#technologies)<br>
 * [Contributing](#Contributing)<br>
 * [License](#License)<br>
 * [Questions / Issues](#Questions)<br>
@@ -14,6 +15,10 @@
   ## Usage
   Login or signup with your Wizard name, email address and password. Head to your common room to se house points, then head to the great hall for a challenging set of trivia from the Harry Potter universe.<br>
   undefined
+
+  ## Technologies
+  JavaScript, Express, Node, MongoDB, Mongoose, GraphQL, Apollo, React.js
+
   ## Contributing
   Breania Harvey, Lori Timmons, David Mueth, Jared Elliott <br>
   
